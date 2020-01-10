@@ -1,0 +1,74 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsubsection{Metody bezpieczne i dempotentne.}
+
+    \begin{theorem}
+        \textbf{Metoda bezpieczna} (safe) - metoda, która nie generuje efektów ubocznych. W praktyce są to metody nie modyfikujące danych zasobów na serwerze
+    \end{theorem}
+
+    \begin{theorem}
+        \textbf{Metoda idempotentna} - to metoda, której wieokrotne wykonanie daje takie same efekty, jak wykonanie jest jeden raz. Klient może tak metodę wykonać wielokrotnie i oczekuje, że jej efekt w stosunku do zasobów serwera będzie taka sam jak w przypadaku wykonania jednorazowego, chociaż zwrócona odpowiedźmoże się różnić.
+    \end{theorem}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|}
+                \hline
+                \textbf{Metoda} & \textbf{Bezpieczna?} & \textbf{Idempotentna?}\\
+                \hline
+                \hline
+                GET & Tak & Tak \\
+                \hline
+                HEAD & Tak & Tak \\
+                \hline
+                OPTIONS & Tak & Tak \\
+                \hline
+                TRACE & Tak & Tak \\
+                \hline
+                PUT & No & Tak \\
+                \hline
+                DELETE & Nie & Tak \\
+                \hline
+                POST & Nie & Nie \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    Prawidowa implementacja metod leży po stronie twórcy oprogramownia. Twórca/projektant backendu musi zadbać aby jego obsługa metod była zgodna z powyższymi wymaganiami.
+
+    \subsubsection{Nagłówki.}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{4cm}|p{8cm}|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Ogólne}}\\
+                \hline
+                Connection & umożliwia tworzenie trwałych połaczeń (od wersji HTTP/1.1). Wysłanie Connection: close wymusza zakończenie połączenia.\\
+                \hline
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Nagłówki żądania}}\\
+                \hline
+                Cookie & przekazuje do zrwotnie do serwera HTTP Cookie (ciasteczko) przesłane wcześniej z serwera w nagłówku Set-Cookie\\
+                \hline
+                User-Agent & identyfikuje rodzaj aplikacji klienckiej (przeglądarkę), system operacyjny, klienta, itp.\\
+                \hline
+                Host & nazwa domenowa serwera. W wersji HTTP/1.1 (i 2.0) nagłowek obowiązkowy. Umożliwia Virtual hosting\\
+                \hline
+                Accept-Language & język(i) akceptowane/preferowane przez klienta\\
+                \hline
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Nagłówki odpowiedzi}}\\
+                \hline
+                Content-Type & typ MIME zwartości (np. text/html, text/css, image/png)\\
+                \hline
+                Content-Length & rozmiar ciała (body) odpowiedzi. (W przypadku metody HEAD, rozmiar ciała, które byłoby wysłane dla metody GET).\\
+                \hline
+                Set-Cookie & HTTP Cookie umożliwia między innymi zapamiętywanie stanu (sesji).\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+\end{document}

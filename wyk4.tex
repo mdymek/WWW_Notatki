@@ -1,0 +1,73 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{HTTP - HyperText Markup Language.}
+
+    \textbf{XHTML} jest znacznie bardziej restrykcyjny (zgodny z XML).
+    \begin{itemize}
+        \item Znaczniki i atrybuty w muszą być pisane małymi literami
+        \item Wszystkie elementy muszą być poprawnie zakończone (np. <br/>)
+        \item Wszystkie wartości atrybutów muszą być w cudzysłowiach lub apostraofach
+        \item Każdy atrybut musi mieć wartość (niedozwolone jest np. <div hidden>; musimy pisać <div hidden="hidden">)
+        \item Bardziej surowe zasady zagnieżdżania (np. <a> nie może być zagnieżdżone w <a>, <form> nie może zawierać <form> i inne).
+        \item Znaki $< >$ \& ' " muszą być reprezentowane przez encje (\&lt; \&gt; \&amp; \&apos; \&quot;) nawet jeśli są w wartościach atrybutów.
+        \item W XHTML aby identyfikować fragmenty dokumentu opisane przez znaczniki <a> <form> <img> <map> (i kilka innych) nie należy używać atrybutu name (zamiast tego id)
+        \item Dokument musi zaczynać się od deklaracji <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        i musi zawierać elementy <html>, <head>, <title> i <body>.
+    \end{itemize}
+
+    \textbf{HTML 5}.
+    \begin{itemize}
+        \item Nie wymaga aby kod HTML był dobrze uformowanym XMLem.
+        \item Dużo wymogów dotyczących poprawności dokumentów i ich dokładniejsze sprawdzanie.
+        \item Możliwość zastosowania narzędzi pochodzących z xml takich jak XPath czy XSLT.
+        \item Wsparcie przestrzeni nazw co umożliwia użycie np. MathML czy SVG.
+        \item Zintegrowane wsparcie dla multimediow niewymagające użycia wtyczek
+        \item Brak wersji (jak Strict, Frames, Transitional).
+        \item Dobrze tolerowany przez stare przeglądarki.
+        \item Nowe elementy, np.: article, aside, audio, footer, header.
+        \item Nowe typy elementów formularzy: dates and times, email, url, search, number, range, tel, color.
+        \item Nowe atrybuty: charset (dla elementu meta), async (dla elementu script)
+        \item Globalne atrybuty (które mogą być zasotsowane do dowolnego elementu): id, tabindex, hidden, data-* (custom data attributes)
+        \item Usunięto niektóre zdeprecjonowane elementy: acronym, applet, basefont, big, center, dir, font, frame, frameset, isindex, noframes, strike, tt
+        \item Zmiana znaczenia/użycia niektórych istniejących atrybutów i elementów (np <i> i <small> - zmiana znaczenia na bardziej semantyczne)
+    \end{itemize}
+
+    \textbf{Nowe API}
+    \begin{itemize}
+        \item \textbf{GeoLocation API} - dostęp do lokalizacji użytkownika
+        \item \textbf{Web Storage API} - wygodniejsze składowanie infomracji po stronie klienta
+        \item \textbf{Web Socket API} - full-duplex komunikacja z serwerem.
+        \item \textbf{Web Worker API} - umożliwia uruachamianie zdaań w Javascripcie w innym wątku niż interfejs przeglądarki.
+        \item \textbf{Drag \& Drop API} - wsparcie dla "drag and drop"
+    \end{itemize}
+
+    \textbf{Content type}
+    \begin{itemize}
+        \item Dla zawartości w standarcie HTML: text/html
+        \item Dla zawartości w standarcie XHTML: application/xhtml+xml (ewentualnie application/xml lub text/xml)
+    \end{itemize}
+
+    \textbf{Interpretacja przez przeglądarkę.}
+    W zależności od Content type oraz <!doctype> przeglądarka interpretuje zawartość w rózny sposób.
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
+                \hline
+                \textbf{Content-Type} & text/html & text/html & application/xhtml+xml\\
+                \hline
+                \textbf{doctype} & brak/stary & poprawny & bez znaczenia\\
+                \hline
+                \textbf{Wynik} & HTML(quirks mode) & HTML 4.01 / HTML 5 & XHTML\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    W przypadku trybu html nie zauważy np. zamknięcia elementu typu <strong />.
+
+
+
+\end{document}

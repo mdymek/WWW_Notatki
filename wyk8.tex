@@ -1,0 +1,67 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \begin{itemize}
+        \item Środowisko uruchomieniowe Javascript oparte na silniku Google Chrome V8
+        \item Stworzony w 2009 roku przez Ryana Dahla w celu wyeliminowania problemów ze skalowalnością tradycyjnych serwerów HTTP
+        \item Open source: licencja MIT
+        \item Działa m.in. Na Windows, Linuksie i MacOS
+        \item Wykorzystywany przede wszystkim do tworzenia serwerów HTTP, ale jest też używany do tworzenia aplikacji desktopowych
+        \item Jest bazą wielu środowisk deweloperskich (deweloper stack) m.in. dla Angular-a, React-a
+    \end{itemize}
+
+    \textbf{Architektura}
+    \begin{itemize}
+        \item Jeden wątek z pętlą zdarzeń (event loop)
+        \item Nieblokujące I/O bazujące na zdarzeniach i wywołaniach zwrotnych (callback)
+        \item Bazuje na bibliotece libuv (napisanej w języku C)
+    \end{itemize}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{| p{8cm} | p{8cm}| }
+                \hline
+                \textbf{Zalety} & \textbf{Wady}\\
+                \hline
+                \hline
+                \begin{itemize}
+                    \item Duża szybkość, potrafi obsłużyć znacznie więcej żądań niż tradycyjny serwer (jak np. Apache)
+                    \item Brak narzutów związanych z tworzeniem i utrzymywaniem wątków
+                    \item Wysoka skalowalność związana z użyciem nieblokującego API i pojedynczej pętli zadarzeń
+                    \item Rozbudowany ekosystem narzędzi i bibliotek
+                    \item Możliwość pisania frontendu i backendu w tym samym języku
+                    \item Jest częścią środowisk tworzenia aplikacji webowych:
+                    \begin{itemize}
+                        \item MEAN - MongoDB, Express, Angular, Node
+                        \item MERN - MongoDB, Express, React, Node
+                    \end{itemize}
+                \end{itemize}
+                &
+                \begin{itemize}
+                    \item Niezbyt dobrze sprawdza się w zastosowaniach wymagających dużej mocy obliczeniowej (CPU intensive)
+                    \item Stosunkowo duża zmienność całego środowiska i pakietów
+                    \item Callback hell – problem z utrzymaniem przejrzystości kodu z związku z potrzebą stosowania dużej liczby wywołań zwrotnych.
+                \end{itemize}\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \subsubsection{NPM - Node Package Manager.}
+    \begin{itemize}
+        \item Podstawowe narzędzie do zarządzania pakietami w Node.js
+        \item Umożliwia instalację i aktualizację pakietów z uwzględnieniem zależności między nimi
+        \item Pakiety można instalować globalnie lub lokalnie
+    \end{itemize}
+
+    \textbf{Plik package.json}
+    \begin{itemize}
+        \item Zawiera ważne informacje na temat tworzonego pakietu/aplikacji
+        \item Zawiera listę pakietów od których zależy pakiet/aplikacja wraz z wymaganymi numerami wersji
+        \item Pozwalana na automatyczne pobranie wszystkich niezbędnych zależności
+    \end{itemize}
+
+    \textbf{Synchroniczny lub asynchroniczny model programowania.}\\
+
+    \textbf{Request} i \textbf{response} są strumieniami, które generują zdarzenia 'error', 'data', 'end'.
+\end{document}

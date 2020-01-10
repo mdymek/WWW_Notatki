@@ -1,0 +1,285 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{8cm}|p{8cm}|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Internet i WWW to nie to samo}}\\
+                \hline
+                \textbf{Internet} & \textbf{WWW}\\
+                \hline
+                \hline
+                The Internet is a global system of interconnected computer networks that interchange data by packet switching using the standardized Internet Protocol Suite (TCP/IP).
+                &
+                The World Wide Web (WWW, or simply Web) is an information space in which the items of interest, referred to as resources, are identified by global identifiers called Uniform Resource Identifiers (URI)\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \textbf{Jak działa WWW?}
+    \begin{enumerate}
+        \item Użytkownik wpisuje w polu adresu przeglądarki adres (URL)
+        \item Przeglądarka analizuje wpisany adres sprawdzając protokół (HTTP) oraz nazwę hosta.
+        \item Przeglądarka łączy się z serwerem DNS i uzyskuje adres IP hosta.
+        \item Przeglądarka nawiązuje połączenie TCP/IP serwerem WWW działającym pod danym adresem na porcie 80 (domyślny port dla protokołu http).
+        \item Przeglądarka wysyła w ramach protokołu HTTP żądanie (request) pobrania zasobu: GET /home.html HTTP/1.1
+        \item Serwer lokalizuje żądany zasób statyczny lub generuje go dynamicznie, a następnie zwraca w postaci odpowiedzi (response) HTTP zawierającej treść strony w postaci HTML.
+        \item Przeglądarka wyświetla zawartość HTML w postaci graficznej.
+    \end{enumerate}
+
+    \subsection{URI}
+
+    \textbf{URL (Uniform Resource Locator)} jest szczególnym przypadkiem bardziej ogólnego pojęcia: URI.
+
+    \textbf{URI (Uniform Resource Identifier)} - ciąg znaków jednoznacznie identyfikaujący dowolny abstrakcyjny lub fizyczny zasób.
+    \begin{itemize}
+        \item \textbf{Uniform} - pozwala w jednorodny sposób odowywać się do różnych rodzajów zasobów niezależnie od sposobu dostępu do nich. Definiuje ogólną postać identyfikatora pozwalając na rozszerzanie i uzupenianie definicji dla różnych typów zasobów. (http, ftp, isbn)
+        \item \textbf{Resource} - Dowolny abstrakcyjny lub fizyczny zasób. Cokolwiek, co może być identyfikowane przez URI. Np. elektroniczne dokumenty, obrazy, książka (numer isbn), serwis sieciowy.
+        \item \textbf{Identifier} - Identyfikator pozwalający na odróżnienie jednego zasobu od drugiego. Nie musi zawierać informacji o sposobie uzyskania dostępu do tego zasobu.
+    \end{itemize}
+    URI pozwala na identyfikację różnych zasobów przy pomocy rozszrzalnego zbioru schmatów nazewnictwa (naming schemes).
+    URI definiuje jedynie ogólne ramy tych schematów, podczas gdy szczegóły składni są definiowane w specyfikacjach
+    poszczególnych schematów. Takimi schematami są np. http, file, mailto. Istnieją pewne wspólne zasady składni
+    niezależne od konkretnego schematu.
+
+    Listę oficjalnie zarejestrowanych schematów można znaleść na stronie IANA (Internet Assigned Numbers Authority).
+
+
+    Każde URI może być zaklasyfikowane jako lokalizator (Locator) URL, nazwa (Name) URN lub oba na raz.
+
+    O lokalizatorze (URL) mówimy, jeśli URI określa również lokalizację zasobu (np. adres sieciowy).
+    URN, to identyfikator nadający zasobowi "nazwę" - identyfikator, który pozostaje globalnie unikalny i trwały nawet jeśli sam zasób przestanie istnieć lub stanie się niedostępny. Dla takich identyfikatorów często używany jest schemat urn, ale nie jest to bezwzględnie wymagane.
+
+    Sam schemat nie przesądza o tym, czy URI jest URN. Np. przestrzenie nazw w XML są URN-ami, chociaz na ogół korzystają ze schematu http.
+
+    Znaki zarezerwowane są kodowane, np spacja = \%20 (lub $+$).
+
+
+    \subsection{Protokół HTTP}
+
+    \begin{itemize}
+        \item HTTP - Hypertext Transfer Protocol.
+        \item Z RFC2616: "The Hypertext Transfer Protocol (HTTP) is an application-level protocol for distributed, collaborative, hypermedia information systems. It is a generic, stateless, protocol which can be used for many tasks beyond its use for hypertext, such as name servers and distributed object management systems, through extension of its request methods, error codes and headers."
+        \item Protokół do wymiany danych w sieci Internet. HTTP jest niesymetrycznym protokołem request – response klient-serwer. Klient HTTP wysyła żądanie (request), na co serwer odsyła mu odpowiedź (response).
+        \item Protokół HTTP jest bezstanowy, co znaczy, że serwer nie jest w stanie bez dodatkowej informacji, zawartej w żądaniu, stwierdzić że poszczególne żądania należą do danej konwersacji między klientem a serwerem. Serwer nie wie, co działo się w poprzednich żądaniach.
+        \item HTTP pozwala klientowi i serwerowi na negocjację typów danych i representacji przesyłanych infomracji.
+    \end{itemize}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{8cm}|p{8cm}|}
+                \hline
+                \textbf{HTTP request} & \textbf{HTTP response}\\
+                \hline
+                \hline
+                \begin{itemize}
+                    \item linię żądania (request line),
+                    \item nagłówki (headers) - przesyłane w postaci par nazwa:wartość, oddzielone przecinkami.
+                    \item (pusta linia)
+                    \item opcjonalnie treść żądania (request body)
+                \end{itemize}
+                &
+                \begin{itemize}
+                    \item linia statusu (status line),
+                    \item nagłówki (headers),
+                    \item (pusta linia)
+                    \item opcjonalnie treść odpowiedzi (response body)
+                \end{itemize}
+                \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{4cm}|p{11cm}|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{METODY HTTP}}\\
+                \hline
+                \textbf{Method} & \textbf{Description}\\
+                \hline
+                \hline
+                GET
+                &
+                The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+                \\
+                \hline
+
+                HEAD
+                &
+                Same as GET, but it transfers the status line and the header section only. (Ponieważ wśród nagłówków znajduje się nagłówek last-modified można wykorzystać metodę HEAD do sprawdzania, czy lokalna cachowana kopia strony jest aktualna.)
+                \\
+                \hline
+                POST
+                &
+                A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.\\
+                \hline
+                PUT
+                &
+                Replaces all the current representations of the target resource with the uploaded content.\\
+                \hline
+                DELETE
+                &
+                Removes all the current representations of the target resource given by URI.\\
+                \hline
+                CONNECT
+                &
+                Establishes a tunnel to the server identified by a given URI.\\
+                \hline
+                OPTIONS
+                &
+                Describe the communication options for the target resource.\\
+                \hline
+                TRACE
+                &
+                Ask the server to return a diagnostic trace of the actions it takes.\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|}
+                \hline
+                \multicolumn{3}{|c|}{\textbf{PORÓWNANIE GET I POST}}\\
+                \hline
+                &\textbf{GET} & \textbf{POST}\\
+                \hline
+                \hline
+                Przycisk Wstecz/ Odświeżenie strony
+                &
+                Niegroźne
+                &
+                Dane zostaną powtórnie przesłane. (przeglądarka pwoinna ostrzec użytkownika, że dane będą powtórnie przesłane)
+                \\
+                \hline
+                Zakładki
+                &
+                Można dodać do zakładek
+                &
+                Nie można dodac do zakładek
+                \\
+                \hline
+                Cachowanie
+                &
+                Można cachować
+                &
+                Nie można cachować
+                \\
+                \hline
+                Encoding type
+                &
+                application/x-www-form-urlencoded
+                &
+                application/x-www-form-urlencoded lub multipart/form-data. Dla danych binarnych używamy multipart encoding
+                \\
+                \hline
+                Historia
+                &
+                Parametry pozostają w historii przeglądarki
+                &
+                Parametry nie są przechowywane w historii przeglądarki
+                \\
+                \hline
+                Ograniczenia na długość przekazywanych danych
+                &
+                Metoda GET dodaje parametry do URL-a, a wiele przeglądartek ogranicza długość URLa (np. do 2048 znaków)
+                &
+                Brak ograniczeń
+                \\
+                \hline
+                Ograniczenia na przesyłane dane
+                &
+                Tylko znaki ASCII
+                &
+                Brak ograniczeń. Dozwolne są także dane binarne
+                \\
+                \hline
+                Bezpieczeństwo
+                &
+                GET mniej bezpieczny niż POST bo dane są przekazywan jako część URLa.
+                Nigdy nie należy przesyłać haseł i innych wrażliwych danych przy pomocy GET
+                &
+                POST jest (tylko odrobinę) bezpieczniejszy niż GET, ponieważ dane nie są przechowywane w historii przeglądarki ani w logach serwera.
+                \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{3cm}|p{4cm}|p{8cm}|}
+                \hline
+                \multicolumn{3}{|c|}{\textbf{STATUSY ODPOWIEDZI}}\\
+                \hline
+                \hline
+                \textbf{1xx} & \textbf{Informational} & \textbf{Request received, server is continuing the process.}\\
+                \hline
+                100 & Continue & The server received the request and is in the process of giving the response.\\
+                \hline
+                \hline
+                \textbf{2xx} & \textbf{Success}
+                & \textbf{The request was successfully received, understood, accepted and serviced.}\\
+                \hline
+                200 & OK & The request is fulfilled.\\
+                \hline
+                \hline
+                \textbf{3xx} &
+                \textbf{Redirection} &
+                \textbf{Further action must be taken in order to complete the request.}\\
+                \hline
+                301 & Move Permanently & The resource requested for has been permanently moved to a new location. The URL of the new location is given in the response header called Location. The client should issue a new request to the new location. Application should update all references to this new location.\\
+                \hline
+                302 & Found \& Redirect (or Move Temporarily) & Same as 301, but the new location is temporarily in nature. The client should issue a new request, but applications need not update the references.\\
+                \hline
+                304 & Not Modified& In response to the If-Modified-Since conditional GET request, the server notifies that the resource requested has not been modified.\\
+                \hline
+                \hline
+                \textbf{4xx} &\textbf{Client Error} &
+                \textbf{The request contains bad syntax or cannot be understood.}\\
+                \hline
+                400 & Bad Request & Server could not interpret or understand the request, probably syntax error in the request message.\\
+                \hline
+                401 & Authentication Required & The requested resource is protected, and require client’s credential (username/password). The client should re-submit the request with his credential (username/password).\\
+                \hline
+                403 & Forbidden & Server refuses to supply the resource, regardless of identity of client.\\
+                \hline
+                404 & Not Found & The requested resource cannot be found in the server.\\
+                \hline
+                405 & Method Not Allowed& The request method used, e.g., POST, PUT, DELETE, is a valid method. However, the server does not allow that method for the resource requested.\\
+                \hline
+                408 & Request Timeout &\\
+                \hline
+                414 & Request URI too Large &\\
+                \hline
+                \hline
+                \textbf{5xx} &
+                \textbf{Server Error} &
+                \textbf{The server failed to fulfill an apparently valid request.} \\
+                \hline
+                500 & Internal Server Error & Server is confused, often caused by an error in the server-side program responding to the request.\\
+                \hline
+                501 & Method Not Implemented & The request method used is invalid (could be caused by a typing error, e.g., "GET" misspell as "Get").\\
+                \hline
+                502 & Bad Gateway & Proxy or Gateway indicates that it receives a bad response from the upstream server.\\
+                \hline
+                503 & Service Unavailable & Server cannot response due to overloading or maintenance. The client can try again later.\\
+                \hline
+                504 & Gateway Timeout & Proxy or Gateway indicates that it receives a timeout from an upstream server.\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \begin{itemize}
+        \item \textbf{Frontend}
+        \begin{itemize}
+            \item HTML - podstawowy język znaczników dla opisu stron www
+            \item CSS (Cascading Style Sheets) - Kaskadowe arkusze stylów - Język do definiowania takich atrybutów, które wpływają na wygląd strony jak: kolor, czcionka, układ (wyrównanie, centrowanie, marginesy), itp.
+            \item JavaScript - Jeden z najpopularniejszych języków ostatnich lat. De-facto standard dla programowania po stronie klienta. Umożliwia tworzenie interaktywnych stron.
+            \item jQuery - jedna z najczęściej stosowanych bibliotek JavaScript do manipulowania elementami strony WWW.
+            \item Pozostałe - to bardziej rozbudowane biblioteki lub frameworki do budowy aplikacji WWW.
+        \end{itemize}
+        \item \textbf{Backend}
+        \begin{itemize}
+            \item Java - jeden z najpopularnieszych i najbardziej uniwersalnych języków programowania.
+            \item Serwlety - niewielkie aplikacje (najczęsciej w Javie) rozszerzające mozliewości swerwera WWW. Odpowiadają na żadania, które serwer otrzymuje od klienta (np. przeglądarki). Najczęściej generują dynamiczne strony WWW lub zwracają dane np. pobrane z bazy danych.
+            \item Java Server Pages (JSP) - technologia generowania stron WWW. W specyficznym języku znaczników będącym mieszanką HTML-a i Javy tworzone są szablony stron, które są następnie tłumaczone na serwlety w Javie. Przykład pliku JSP
+            \item Spring MVC - framework będący częścią Spring Framework pozwalający ułatwiający tworzenie aplikacji webowych bazujących na serwletach w modelu Model-View-Controller
+            \item Node.js - wieloplatformmowe środowisko uruchomieniowe (runtime) JavaScript działające po stronie serwera. Umożliwia między innymi łatwe tworzenie serwerów WWW w Javascripcie.
+            \item Django - framework w Pythonie do szybiego tworzenia aplikacji internetowych bazujących na wzorcu model-template-view
+            \item Ruby on Rails - framework w języku Ruby do tworzenia aplikacji internetowych
+            \item ASP.NET - framework od Microsoftu do tworzenia dynamicznych aplikacji internetowych przy użyciu m.in. języków C\# i VB.NET
+            \item Go - język stworzony w firmie Google. Doskonale nadaje się do tworzenia aplikacji internetowych (po stronie serwera).
+            \item Swift - język stworzony przez Apple dla iOS itp. Na jego bazie istinieją frameworki umożliające tworzenie aplikacji webowch
+        \end{itemize}
+    \end{itemize}
+
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|p{8cm}|p{8cm}|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Czym jest aplikacja www?}}\\
+                \hline
+                \textbf{Klasyczne serwisy WWW} & \textbf{Single Page Applications}\\
+                \hline
+                \hline
+                \begin{itemize}
+                    \item Ładowane są całe strony.
+                    \item Strony są generowane przez skrypty CGI, serwlety Java, itp.
+                    \item Zmiana zawartości strony wymaga załadowania całej strony
+                    \item Cała logika aplikacji (lub jej większa część) działa po stronie serwera (backend)
+                \end{itemize}
+                &
+                \begin{itemize}
+                    \item Cała strona(y) jest ładowana jednorazowo na początku
+                    \item Cała logika aplikacji działa po stronie klienta (przeglądarki). Zaimplementowana w JavasScript.
+                    \item Różne fragmenty aplikacjji są wyświetlane i/lub tworzone dynamicznie w czasie działania aplikacji
+                    \item Potrzebne dane (w postaci JSON, XML, itp) są pobierane z serwera przy pomocy wywołań AJAX
+                \end{itemize}\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+\end{document}

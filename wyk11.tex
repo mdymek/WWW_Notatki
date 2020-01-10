@@ -1,0 +1,137 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{JEE}
+    \begin{itemize}
+        \item JEE = Java for Enterprise Edition
+        \item Platforma do tworzenia aplikacji biznesowych
+        \item Jest zestawem specyfikacji, a nie implementacji.
+        \item Twórcy specyfikacji (Sun Microsystems, a następnie Oracle) udostępniają również wzorcową implementację specyfikcaji JEE (obecnie: GlassFish lub Sun Java System Application Server)
+        \item Podstawowe interfejsy programistczne zdefiniowane w pierwszych wersjach, to
+        \begin{itemize}
+            \item JDBC (Java Database Conectivity) - dostęp do baz danych
+            \item Java Servlets - obsługa komunikacja sieciowej (najczęściej HTTP)
+            \item JSP (Java Server Pages) - dynamiczne strony WWW
+            \item EJB (Enterprise Java Beans) - specyfikacja komponentów biznesowych po
+            stronie serwera
+        \end{itemize}
+        \item Niektóre z tych API zostały przeniesione do "zwykłej" Javy (JavaSE - Java Standard Edition), a JEE wzbogaciła się o wiele innych interfejsów
+        \item Pierwsze wersje nosiły nazwy J2EE 1.2, J2EE 1.3, J2EE 1.4, a później Java
+        EE 5, Java EE 6, Java EE 7
+        \item \textbf{Problemy z JEE}:
+        \begin{itemize}
+            \item Pierwsze wersje miały dużo możliwości, ale były skomplikowane w użyciu(szczególnie EJB)
+            \item Aplikacje JEE wymagały dużego (ciężkiego) serwera implementującego pełen zakres specyfikacji
+            \item W związku z tym pojawiły się konkurencyjne/komplementarne rozwiązania: Spring, Struts, Guice
+            \item Największą popularność zyskał Spring
+        \end{itemize}
+    \end{itemize}
+
+    \textbf{Serwery aplikacji} (Application servers) - implementują pełną specyfikację JEE między innymi z EJB (Java beans) i
+    JMS (Java messaging).
+
+    \subsection{Spring}
+    Rozwiązuje pewne problemy z JEE:
+    \begin{itemize}
+        \item Upraszcza tworzenie aplikacji biznesowych. Szczególnie tych, które nie
+        potrzebowały dużej części interfejsów JEE
+        \item Pozwala na pracę ze zwykłymi obiektami Javy (POJO - Plain Old Java
+        Object) zamiast skomplikowanych EJB).
+        \item Jest zestawem bibliotek zawierących implementacje, co umożliwia
+        wdrażanie aplikacji Springa na serwerach WWW nie implementujących
+        JEE, a nawet budowanie aplikacji desktopowych.
+        \item Opiera na IoC (Inversio of Control) i Dependency Injection, co
+        pozwala między innymi ograniczyć stosowanie niezbyt wygodnych usług
+        nazewnicznych JNDI (Java Naming and Directory Interface)
+    \end{itemize}
+
+    \begin{itemize}
+        \item Rózna sposoby konfiguracji systemu:
+        \begin{itemize}
+            \item pliki XML
+            \item adnotacje
+            \item kod Javy
+        \end{itemize}
+        \item Dwa warianty budowy aplikacji webowych: standardowe serwlety oraz nieblokujące technologie Reactive stack.
+        \item Moduły Springa można wykorzystać także do budowy aplikacji desktopowych
+        \item Można aplikacje zawierające wpbudowany serwer WWW.
+        \item Spring Boot umożliwiający łatwe tworzenie róznych typów aplikacji bazujący
+        na domyślnych sensowych ustawieniach
+    \end{itemize}
+
+    \textbf{Kontener IoC}
+    \begin{itemize}
+        \item Filozofia Spring-a opiera się na odwróceniu zależności (IoC) i wstrzykiwaniu
+        zależności (DE)
+        \item Najważniejszą częscią architektury Springa jest kontener IoC w
+        terminologii Spring-a zwany kontekstem aplikacji, implementujący interfejs
+        ApplicationContext.
+        \item Kontekst aplikacji zarządza cyklem życia komponentów (beans) tworzącymi
+        aplikację.
+        \item Komponenty, to zwykłe obiekty Javy (POJO - Plain Old Java Object)
+    \end{itemize}
+
+    \textbf{Wstrzykiwanie zależności w Springu}
+    \begin{itemize}
+        \item przy pomocy XML-a
+        \item przy pomocy adnotacji
+        \item wstrzykiwanie zależności przy pomocy:
+        \begin{itemize}
+            \item konstruktora - zalecane dla wymaganych zalezności
+            \item metod ustawiających (setterów) - najlepiej dla zależności opcjonalnych
+            \item pól w klasach
+        \end{itemize}
+    \end{itemize}
+
+    \textbf{Bean scopes}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{| p{4cm} | p{10cm} |}
+                \hline
+                \multicolumn{2}{|c|}{Ogólne zakresy.}\\
+                \hline
+                \textbf{singleton (default)} &
+                tworzona tylko jedna instancja (w jednym ApplicattionContext)\\
+                \hline
+                \textbf{prototype} & Za kązdym żadaniem pobrania `bean`a zwracany jest
+                mnowy egzemplarza\\
+                \hline
+                \hline
+                \multicolumn{2}{|c|}{Zakresy dostępne ApplicationContext typu webowego}\\
+                \hline
+                \textbf{request} & Pojedyncza instancja jest tworzona i dostępna podczas
+                trwania jednego żądania HTTP (HTTP request)\\
+                \hline
+                \textbf{session} & Pojedyncza instancja jest tworzona i dostępna podczas
+                trwania jednej sesji HTTP (HTTP session)\\
+                \hline
+                \textbf{application} & Pojedyncza instancja jest tworzona i dostępna podczas
+                trwania ServletContext.\\
+                \hline
+                \textbf{websocket} & Pojedyncza instancja jest tworzona i dostępna podczas
+                trwania WebSocket.\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \textbf{MVC}
+    \begin{itemize}
+        \item \textbf{Model} - dane aplikacji (najczęściej POJO)
+        \item \textbf{View} - prezentuje dane z modelu dla użytkownika (w naszym wypadku generuje
+        stronę HTML)
+        \item \textbf{Controller} - przetwarza żądania użytkownika generując/modyfikując model i przekazuje
+        go do widoku w celu wyświetlenia
+    \end{itemize}
+
+    \textbf{Dispatcher Servlet} - w Spring MVC główym obiektem synchronizującym te aktywności jest
+    DispatcherServlet
+    \begin{itemize}
+        \item \textbf{Handler mapping} - mapuje żadania HTTP na odpowiednie kontrolery
+        \item \textbf{Controller} - wywołuje odpowiednie metody obsługujące żądania GET, POST, itp. Metody te
+        ustawiają odpowiedni model danych i zwracają nazwę widoku.
+        \item \textbf{View Resolver} - mapuje nazwy widoków na odpowiednie szablony stron (np. JSP)
+        \item \textbf{View} - Renderuje stronę na podstawie szablonu z odpowiednim modelem
+    \end{itemize}
+\end{document}

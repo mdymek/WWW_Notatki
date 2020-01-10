@@ -1,0 +1,85 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[MeX]{polski}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfiles}
+\usepackage{booktabs}
+\graphicspath{{graphics/}}
+\usepackage{multirow}
+\usepackage{xparse}
+\usepackage[most]{tcolorbox}
+
+\NewDocumentCommand{\newframedtheorem}{O{}momo}{%
+\IfNoValueTF{#3}
+{%
+\IfNoValueTF{#5}
+{\newtheorem{#2}{#4}}
+{\newtheorem{#2}{#4}[#5]}%
+}
+{\newtheorem{#2}[#3]{#4}}
+\tcolorboxenvironment{#2}{#1}%
+}
+
+\newframedtheorem{theorem}{Theorem}[section]
+\newframedtheorem[
+enhanced jigsaw,
+colback={white!40!yellow},
+colframe=red,
+boxrule=2pt,
+sharp corners,
+]{definition}[theorem]{Definition}
+
+\title{Notatki z kursu Programowanie dla WWW}
+\author{Małgorzata Dymek}
+\date{2019/20, semestr zimowy}
+
+\begin{document}
+    \maketitle
+
+    \section{Wstęp.}
+    \subfile{wyk1}
+
+    \section{URL i HTTP.}
+    \subfile{wyk2}
+    \subfile{wyk3}
+
+    \section{HTML.}
+    \subfile{wyk4}
+
+    \section{CSS.}
+    \subfile{wyk5}
+
+    \section{Javascript}
+    \subfile{wyk6}
+
+    \section{React.}
+    \subfile{wyk7}
+
+    \section{Node.js}
+    \subfile{wyk8}
+
+    \section{ExpressJS}
+    \subfile{wyk9}
+
+    \section{Zarządzanie sesjami w aplikacjach webowych}
+    \subfile{wyk10}
+
+    \section{Komunikacja Frontend-Backend}
+    \subfile{wyk10.5}
+
+    \section{Spring vs JEE}
+    \subfile{wyk11}
+
+    \section{Bezpieczeństwo}
+    \subfile{wyk12}
+
+\end{document}

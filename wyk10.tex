@@ -1,0 +1,160 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \begin{itemize}
+        \item Protokół HTTP jest bezstanowy (chociaż sam serwer oczywiście jakiś stan posiada).
+        \item Każde żądanie przychodzące z serwera jest przetwarzane niezależnie od ewentualnych wcześniejszych żądań
+        \item W wielu sytuacjach konieczne jest powiązanie kolejnych żądań przychodzących od tego samego klienta
+        \item Ciąg takich żądań przychodzących od jednego klienta, to sesja
+        \item Grupowanie żadań przychodzących od jednego klienta (jedna sesja)musi byc realizowane przez programistę (przy ewentualnym wsparciu wykorzystywanych frameworków i bibliotek)
+    \end{itemize}
+
+    \begin{theorem}
+        Sesja jest nowa jeśli została utworzona po stronie serwera,
+        ale klient do niej jeszcze nie przystąpił
+    \end{theorem}
+
+    \textbf{Identyfikator sesji}
+    \begin{itemize}
+        \item Z sesją wiążemy pewien identyfikator generowany przez serwer (identyfikator sesji
+        \item Identyfikator sesji jest generowany przez serwer przy pierwszym żądaniu przychodzącym od klienta
+        \item Wszystkie następne żądania przychodzące od tego samego klienta zawierają ten identyfikator
+    \end{itemize}
+
+    \textbf{Techniki przekazywania identyfikatora sesji}
+    \begin{itemize}
+        \item Przepisywanie URL (URL rewriting)
+        \item Ukryte pola w formularzach HTML
+        \item Ciasteczka (cookies)
+    \end{itemize}
+
+    \textbf{Przepisywanie URL (URL Rewriting)}
+    \begin{itemize}
+        \item Identyfikator sesji jest dołączany do URL-a każdego żądania.
+        \item Serwer na zwracanej stronie dołącza do wszystkich URL-i dodatkowy parametr z identyfikatorem sesji.
+        \item Wywołanie przez klienta takiego URL-a pozwala serwerowi na pobranie identyfikatora sesji z przekazanego parametru
+    \end{itemize}
+
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{p{8cm} | p{8cm}}
+                \textbf{Zalety} & \textbf{Wady}\\
+                \hline
+                \begin{enumerate}
+                    \item Działa z każdą przeglądarką niezależnie od ustawień użytkownika
+                \end{enumerate}
+                &
+                \begin{enumerate}
+                    \item Trzeba przepisać każdy używany link
+                    \item W przypadku potrzeby przekazania większej liczby informacji przez parametry URL-a możemy osiągnąć limit długości URL-a.
+                \end{enumerate}\\
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \textbf{Ukryte pola formularza (hidden fields)}
+    \begin{itemize}
+        \item Identyfikator sesji (i ewentualne inne dane) są przekazywane z serwera do przeglądarki jako wartości ukrytych pól formularza
+        \item W przeglądarce po wykonaniu submit, zawartość tych poł jest dołączana automatycznie do wartości pozostałych pól i, jako parametry metody POST lub
+        GET, są przekazywane z powrotem na serwer.
+    \end{itemize}
+
+
+    \textbf{Http Session}
+    \begin{itemize}
+        \item W serwletach mamy do dyspozycji interfejs HttpSession
+        \item Kontener serwletów używa tego iterfejsu do utworzenia trwałes sesji trwającej określany przedział czasu i rozciągającej się wiele requestów od tego samego użytkownika
+        \item Konkrena implementacja zależy od serwera i jego konfiguracji i może opierac się np. na ciasteczkach lub przepisywaniu URLi
+        \item Interfejs HttpSession umożliwia
+        \begin{itemize}
+            \item Podgląd i modyfikację infomracji o sesji, takich jak identyfikator sesji, moment utworzenia, czas ostatniego dostępu, itp.
+            \item Dodawanie do sesji obiektów przechowujących informację dostępną
+            podczas następnych wywołań serwletu dla tej samej sesji
+        \end{itemize}
+        \item Interfejs HttpSession
+    \end{itemize}
+
+    \textbf{Cookies}
+    \begin{itemize}
+        \item W kodzie serwlet pobieramy z request ciasteczka (jeśli są)oraz tworzymy nowe i dodajemy do response
+        \item Przeglądarka automatycznie do zwrotnego `request`u dołącza ciasteczka
+        przesłane z serwera
+        \item HTTP Cookie niewielki zestaw informacji przekazywany z serwera do klienta
+        \item Klient może takie ciasteczko zachować i odesłać z powrotem z następnym
+        zapytaniem do serwera
+        \item \textbf{Session cookies} - są usuwane przez przeglądarkę kiedy przeglądarka jest zamykana. nie mają
+        ustawionej dyrektywy MaxAge ani Expires)
+        \item \textbf{Permanent cookies} - dezaktywuja się w określonym moomencie (dyrektywa Expires) lub po
+        określonym czasie (dyrektywa MaxAge). Mogą trwać pomiędzy kolejnymi
+        uruchomieniami klienta.
+    \end{itemize}
+
+    \textbf{Inne ważniejsze dyrektywy}
+    \begin{itemize}
+        \item \textbf{Secure} - ciasteczko może być wysłane na serwer jedynie przy użyciu bezpiecznego
+        protokołu HTTPS
+        \item \textbf{HttpOnly} - ciasteczko może być wysłane na serwer jedynie przez przeglądarkę. Nie jest
+        możliwe dołączenie ciasteczka z pzoiomu kodu w Javascript.
+        \item \textbf{Domain} - fomena (nazwa hosta) do której ciasteczko może być wysłane.
+        Dopuszczalne są także poddomeny. Jeśli Domain nie jest utawione, to można odesłać ciasteczko jedynie do
+        domeny z której przyszło (wykluczając podomeny)
+    \end{itemize}
+
+    \textbf{Servlet filtr}
+    \begin{itemize}
+        \item Filtr jest obiektem, który jest wywoływany przed obsłużeniem przez serwlet żadania klienta oraz po jego obsłużeniu.
+        \item Może odczytywać i modyfkować zawartość żądania oraz odpowiedzi
+        \item Zastosowania filtrów
+        \begin{itemize}
+            \item zapisywanie do logów
+            \item kompresja
+            \item szyfrowanie i deszyfrowanie
+            \item autoryzacja użytkownika
+            \item walidacja dostępu do zasobów
+        \end{itemize}
+    \end{itemize}
+
+    \subsection{Autentykacja użytkownika}
+    Metody
+    \begin{enumerate}
+        \item HTTP basic authentication
+        \begin{itemize}
+            \item Mechanizm wbudowany w protokół HTTP
+            \item Schematy: Basic (base64), Bearer(OAuth 2.0), Digest (md5, sha itp)
+            \item Basic authentication scheme:
+            \begin{itemize}
+                \item Identyfikator użytkonika wraz z hasłem przesyłane są w kodowaniu base64, które jest odwracalne
+                \item Powininen (w właściwie musi) być używany z protokołem HTTPS aby uchronić hasło przed dostępem osób trzecich
+                \item Wsparcie dla tej motody jest wbudowane zarówno w kliencie jak i na serwerze
+                \item Brak możliwości wylogowania użytkonika
+            \end{itemize}
+        \end{itemize}
+        \item Cookies
+        \begin{itemize}
+            \item Po przesłaniu danych autoryzacyjnych serwer generuje identyfikator sesji autoryzowanej.
+            \item Jest on przechowywany na serwerze oraz przekazany do klienta
+            \item Klient przekazuje go przy każdym żądaniu dostęu do zasobów
+            \item Serwer sprawdza, czy identyfikator jest poprawny i aktywny
+            \item Wylogowanie polega na dezaktywacji lub usunięcia identyfikatora z serwera
+            \item Brak możliwości wyklogowania użytkonika, ale można określić czas ważności tokena
+        \end{itemize}
+        \item Tokens
+        \begin{itemize}
+            \item Najczęściej używane sa JSON Web Tokens (JWT)
+            \item Token nie jest przechowywany na serwerze, a tylko u klienta (Local storage, Cookies, itp)
+            \item Klient wraz zżadaniem dostęu do zasobu wysyła token w nagłówku
+            Authorization: Bearer <token>.
+            \item Serwer weryfikuje poprawność tokenu przy pomocy swojego prywatnego klucza
+            \item Struktura tokena:
+            \begin{itemize}
+                \item Nagłówek (header) - określa typ tokenu u rodzaj lagorytmu haszującego.
+                \item Zawartość (payload) - Zawiera stwierdzenia najczęściej na temat
+                tożsamości użytkonika (sub - subject)
+                \item Podpis (signature) - podpis kryptograficzny nagłówka i zawartości.
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+\end{document}
+
