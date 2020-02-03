@@ -4,21 +4,14 @@
 
     \begin{itemize}
         \item \textbf{Kaskadowe arkusze stylów} (ang. Cascading Style Sheets) - język opisu sposoby prezentacji (wyglądu) dokumentu HTML.
-        \item CSS umożliwia rozdzielenie struktury i zawartości dokumentu od sposobu jego prezentacji\\
+        \item CSS umożliwia \textbf{rozdzielenie struktury} i zawartości dokumentu od \textbf{sposobu} jego \textbf{prezentacji}\\
 
-        \item Określanie czcionek (rodziny, koloru, wielkości, pugrubienia, itp)
-        \item Określenie marginesów, odstępów między liniami
-        \item Określenie rozmiarów i położenia poszczególnych elementów strony
-        \item Określanie obramowań i wypełnień
-        \item Zmiana spsobu prezentacji standardowych elementów (np. punktory w listach)
+        \item Określanie \textbf{czcionek}, \textbf{marginesów}, \textbf{odstępów} między liniami; \textbf{rozmiarów} i \textbf{położenia} poszczególnych elementów
+        strony; \textbf{obramowań} i \textbf{wypełnień}.
+        \item Zmiana sposobu \textbf{prezentacji standardowych elementów} (np. punktory w listach)
     \end{itemize}
 
-
-    \subsubsection{Selektory}
-
-
-
-
+    \subsection{Selektory}
     \begin{itemize}
         \item Selektor decyduje do którego elementu strony są stosowane właściwości
         \item Kryterium wyboru może być m.in. typ elementu, atrybuty (w szczególności id i class) oraz położenie elementu względem innych elementów.
@@ -26,28 +19,37 @@
         \item Można także używać pseudo-klas dających dostęp do informacji nie zawartych bezpośrednio w dkoumencie (:hover, :visited)
     \end{itemize}
 
-
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
+            \begin{tabular}{|p{3.5cm}||p{4.5cm}|p{8cm}|}
                 \hline
-                \textbf{Content-Type} & text/html & text/html & application/xhtml+xml\\
+                \textbf{Selector} & \textbf{Example} & \textbf{Example description}\\
                 \hline
-                \textbf{doctype} & brak/stary & poprawny & bez znaczenia\\
                 \hline
-                \textbf{Wynik} & HTML(quirks mode) & HTML 4.01 / HTML 5 & XHTML\\
+                \textbf{.class} & .intro & Selects all elements with class="intro"\\
+                \hline
+                \textbf{\#id} & \#firstname & Selects the element with id="firstname"\\
+                \hline
+                \textbf{*} & * & Selects all elements\\
+                \hline
+                \textbf{element} & p & Selects all <p> elements\\
+                \hline
+                \textbf{element,element} & div, p & Selects all <div> elements and all <p> elements\\
+                \hline
+                \textbf{element element} & div p & Selects all <p> elements inside <div> elements\\
+                \hline
+                \textbf{[attribute]} & [target] & Selects all elements with a target attribute\\
+                \hline
+                \textbf{[attribute=value]} & [target=\_blank] & Selects all elements with target="\_blank"\\
                 \hline
             \end{tabular}
         \end{center}
     \end{table}
-    W przypadku trybu html nie zauważy np. zamknięcia elementu typu <strong />.
 
-    Np: .class, \#id, $*$, element, (element,element), (element element), [attribute=value].
-
-    \textbf{Priorytety}
+    \subsection{Priorytety}
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{|p{2cm}|p{4cm}|p{8cm}|}
+            \begin{tabular}{|p{1.5cm}|p{4cm}|p{10.5cm}|}
                 \hline
                 \textbf{Priority} & \textbf{CSS source type} & \textbf{Description}\\
                 \hline
@@ -60,7 +62,7 @@
                 \hline
                 4 & User defined & Most browsers have the accessibility feature: a user defined CSS\\
                 \hline
-                5 & Selector specificity & A specific contextual selector (\#heading p) overwrites generic definition\\
+                5 & Selector specificity & A specific contextual selector overwrites generic definition\\
                 \hline
                 6 & Rule order & Last rule declaration has a higher priority\\
                 \hline
@@ -73,28 +75,33 @@
             \end{tabular}
         \end{center}
     \end{table}
-    Style związane z fontami (tekstem) sa dziedziczone z elementu rodzica. Większość pozostałych stylów nie jest dziedziczona.
+    Style związane z fontami są dziedziczone z elementu rodzica. Większość pozostałych stylów nie jest dziedziczona.
 
-    \textbf{Specyficzność.}\\
+    \subsection{Specyficzność.}
 
-    Specyficzność określa "szczegółowość" selektora:
-    \begin{itemize}
-        \item prosty selektor (selektor elementu) ma specyficzność (p) = 0, 0 , 0, 1
-        \item selektor klasy ma specyficzność (.head-button)= 0, 0 , 1, 0
-        \item selektor oparty na id ma specyficzność (\#save-button) = 0, 1 , 0, 0
-        \item style inline (umieszczony w elemencie) ma specyficzność = 1, 0 , 0, 0
-    \end{itemize}
+    Specyficzność określa "\textbf{szczegółowość}" selektora:
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{p{3cm} p{9cm} p{3cm}}
+                0, 0 , 0, \textbf{1} & prosty selektor (selektor \textbf{elementu}) & (p)\\
+                0, 0 , \textbf{1}, 0 & selektor \textbf{klasy} ma specyficzność & (.head-button)\\
+                0, \textbf{1} , 0, 0 & selektor oparty na \textbf{id} ma specyficzność & (\#save-button)\\
+                \textbf{1}, 0 , 0, 0 & style \textbf{inline} ma specyficzność &\\
+            \end{tabular}
+        \end{center}
+    \end{table}
+
     Selector "body \#content .data img:hover" ma specyficzność równą 0,1,2,2.
 
-
     \subsection{Box Model}
-
     \begin{table}[H]
         \begin{center}
             \begin{tabular}{p{8cm} p{8cm}}
                 \begin{itemize}
-                    \item Każdy element HTML można traktować jako prostokąt. Zawartość elementu (content) jest otoczona wypełnieniem (padding), obramowaniem (border) oraz marginesem (margin).
-                    \item W zależności od wartości box-sizing (content-box lub border-box) obliczany jest całkowity rozmiar elementu.
+                    \item Każdy element HTML można traktować jako \textbf{prostokąt}.
+                    \item Zawartość elementu (\textbf{content}) jest otoczona wypełnieniem (\textbf{padding}), obramowaniem (\textbf{border}) oraz marginesem (\textbf{margin}).
+                    \item W zależności od wartości box-sizing (\textbf{content-box} lub \textbf{border-box}) obliczany jest całkowity rozmiar elementu.
                 \end{itemize}
                 &
                 \raisebox{-\totalheight}{\includegraphics[width=8cm]{boxmodel.png}}
@@ -106,24 +113,14 @@
     \subsection{Dodatki}
     \begin{itemize}
         \item \textbf{CSS Transforms} - pozwala na transformacje takie jak przesunięcie, skalowanie, obracanie, itp.
-        \begin{itemize}
-            \item translate()
-            \item rotate()
-            \item scale()
-            \item skewX()
-            \item skewY()
-            \item matrix()
-        \end{itemize}
-
         \item \textbf{CSS Transitions} - pozwala na płynną zmianę wartości.
-
         \item \textbf{SS Flexbox Layout}
         \begin{itemize}
-            \item Elastyczny menadżer układu elementów na stronie.
-            \item Elementy mogą być typu flex-container i/lub flex-item
-            \item Dla \textbf{flex-container} możemy określić kierunek i sposób ulożenia elementów flex-item (pionowo/poziomo, prawo/lewo, zawijanie wierszy, wykorzystanie wolnej przestrzeni)
-            \item Dla \textbf{flex-item} możemy okreslić zdolnośc elementu do powiększania/zmniejszania, wpełania pustej przestrzeni (także w stosunku do sąsiednich elementów), bazowy rozmiar, kolejność wyświetlania, itp.
-            \item Przy pomocy Flexboxa stosunkowo łatwo wykonac podział strony na kilka kolumn tej samej wysokości.
+            \item Elastyczny \textbf{menadżer układu elementów} na stronie.
+            \item Elementy mogą być typu flex-container i/lub flex-item.
+            \item Dla \textbf{flex-container} możemy określić \textbf{kierunek i sposób ułożenia} elementów flex-item (pionowo/poziomo, prawo/lewo, zawijanie wierszy, wykorzystanie wolnej przestrzeni).
+            \item Dla \textbf{flex-item} możemy okreslić \textbf{zdolnośc elementu} do powiększania/zmniejszania, wypełniania pustej przestrzeni, bazowy rozmiar, kolejność wyświetlania, itp.
+            \item Stosunkowo łatwo wykonac \textbf{podział strony} na kilka \textbf{kolumn} tej samej wysokości.
         \end{itemize}
     \end{itemize}
 \end{document}

@@ -1,68 +1,68 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-    Różne standardy (czyli brak standardu):
+    Różne standardy (czyli \textbf{brak standardu}):
     \begin{itemize}
-        \item CommonJS - serwery, Node
-        \item AMD (Asynchronous Module Defintion) - przeglądarki
-        \item ES2015 - wbudowane w język, ale jeszcze niezbyt rozpowszechnione
+        \item \textbf{CommonJS} - serwery, Node
+        \item \textbf{AMD} (Asynchronous Module Defintion) - przeglądarki
+        \item \textbf{ES2015} - wbudowane w język, ale jeszcze niezbyt rozpowszechnione
     \end{itemize}
 
-    Moduły umożliwiają
+    \textbf{Moduły} umożliwiają
     \begin{itemize}
-        \item podział kodu na (bardziej) niezależne części
-        \item łatwiejsze współdzielenie i powtórne wykorzystanie kodu
-        \item ukrycie implmentacji i udostęnienie jedynie wybranych funkcji i zmiennych (interfejs)
-        \item unikanie konfliktów nazw
+        \item \textbf{podział kodu} na (bardziej) \textbf{niezależne} części
+        \item łatwiejsze \textbf{współdzielenie} i \textbf{powtórne wykorzystanie} kodu
+        \item \textbf{ukrycie implmentacji} i udostęnienie jedynie wybranych funkcji i zmiennych (interfejs)
+        \item unikanie \textbf{konfliktów nazw}
     \end{itemize}
 
     \subsection{CommonJS}
     \begin{itemize}
-        \item Plik modułu eksportuje funkcje i obiekty poprzez przypisując je do obiektu module.exports.
-        \item Plik wykorzystujący moduł ładuje go przy pomocy funkcji require().
+        \item Plik modułu \textbf{eksportuje} funkcje i obiekty poprzez przypisując je do obiektu \textbf{module.exports}.
+        \item Plik wykorzystujący moduł \textbf{ładuje} go przy pomocy funkcji \textbf{require()}.
     \end{itemize}
 
     \subsection{Express.JS}
-    Cechy
     \begin{itemize}
-        \item Najpopularniejszy framework w Node
-        \item Unopinionated - nie narzuca rozwiązań i struktury. Daje możliwość wyboru.
-        \item Podpinanie obsługi pod różne metody HTTP i adresy (routing)
-        \item Integracja z różnymi silnikami szablonów stron WWW
-        \item Możliwość rozszerzania funkcjonalności za pomocą middleware: (obsługa sesji, cookies, logowania użytkowników, itp.)
-        \item Funkcjonalność Expressa jest oparta na pojęciu middleware.
+        \item Najpopularniejszy \textbf{framework} w Node
+        \item Unopinionated - \textbf{nie narzuca rozwiązań} i struktury. Daje możliwość wyboru.
+        \item Podpinanie obsługi pod \textbf{różne metody HTTP} i adresy (routing)
+        \item Integracja z \textbf{różnymi silnikami szablonów} stron WWW
+        \item Możliwość \textbf{rozszerzania funkcjonalności} za pomocą \textbf{middleware}: obsługa sesji, cookies, logowania użytkowników, itp.
     \end{itemize}
 
-    \textbf{Routing}
+    \subsubsection{Routing}
     \begin{itemize}
-        \item Definiowanie obsługi dla poszczególnych metod i ścieżek: app.get(), app.post(), app.put(), app.delete() itp.
-        \item Definiowanie obsługi dla dowolnej metody: app.all().
+        \item Definiowanie obsługi \textbf{poszczególnych metod i ścieżek}: app.get(), .post(), .put(), .delete() itp.
+        \item Definiowanie obsługi dla \textbf{dowolnej metody}: app.\textbf{all}().
     \end{itemize}
-    express.Router daje możliwość podzielenia obsługi serwisu/aplikacji webowej na części w zależności od prefiksu użytej ścieżki.
-    Można dodatkowo delegować tę obsługe dododatkowego modułu. Routingi zdefinowane w express\_router.js będą dostępne w pod adresem /express\_router/ oraz /express\_router/about.
 
-    \textbf{Ścieżki} używane przy routingu mogą być definiowane jako napisy z wzorcami, np:
+    \textbf{Express.Router} daje możliwość \textbf{podzielenia obsługi} serwisu/aplikacji webowej na części \textbf{w
+    zależności od prefiksu} użytej ścieżki. Można \textbf{delegować} tę obsługe do \textbf{dodatkowego modułu}. Routingi
+    zdefinowane w express\_router.js będą dostępne w pod adresem $/express\_router$ oraz $/express\_router/about$.
+
+    \textbf{Ścieżki} używane przy routingu mogą być definiowane jako napisy z \textbf{wzorcami}, np:
     \begin{itemize}
         \item app.get('/ab?cd', callback) - '/abcd' lub '/acd'
-        \item app.get('/ab+cd', callback) - '/abcd', '/abbcd', '/abbbcd', ...
+        \item app.get('/ab+cd', callback) - '/abcd', '/abbcd', '/abbbcd', \dots
         \item app.get('/ab*cd', callback) - '/abcd', '/abXcd', , '/abDowolnyTekstcd'
-        \item app.get(/.*info\$/, callback)
+        \item app.get(/.*info\$/, callback) - wyrażenia regularne javascript
     \end{itemize}
 
     \subsubsection{Model MVC (Model-View-Controller)}
     \includegraphics[width=\linewidth]{mvc.png}
 
-    \subsection{Szablony}
-    Express może współpracować z różnymi systemami szablonów HTML. Między innymi Pug, Mustache, EJS.
+    \subsubsection{Szablony}
+    Express może współpracować z \textbf{różnymi systemami szablonów} HTML, m.in. Pug, Mustache, EJS.
 
     \textbf{Pug}
     \begin{itemize}
-        \item Zawieranie się elementów jest odzwierciedlone przy pomocy wcięć.
-        \item Każda (prawie) linia zaczyna się od nazwy znacznika HTML
-        \item Jeśli tag kończy się znakiem =, to dalsza częśc jest traktowana jako wyrażenie Javascript, którego wartość jest wstawiana jako zawartość generowanego elementu.
-        \item Można używać instrukcji warunkowych i pętli
-        \item Można również dziedziczyć/rozszrzać szablony: polecenia extend i block.
-        \item Wygląda jak bardzo uproszczony html, bez nawiasów ostrych <>.
+        \item Zawieranie się elementów jest odzwierciedlone przy pomocy \textbf{wcięć}.
+        \item Każda (prawie) linia zaczyna się od \textbf{nazwy znacznika} HTML
+        \item Jeśli tag kończy się znakiem \textbf{=}, to dalsza częśc jest traktowana jako \textbf{wyrażenie Javascript}, którego wartość jest wstawiana jako zawartość generowanego elementu.
+        \item Można używać \textbf{instrukcji warunkowych} i \textbf{pętli}
+        \item Można również \textbf{dziedziczyć/rozszerzać szablony}: polecenia extend i block.
+        \item Wygląda jak bardzo uproszczony html, \textbf{bez nawiasów ostrych} <>.
     \end{itemize}
 
 

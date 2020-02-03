@@ -1,57 +1,62 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-
     \subsection{OWASP Top 10 Application Security Risks 2017}
-    Open Web Application Security Project - organizacja non-profit zajmująca się zagrożeniami i zabezpieczaniami aplikacji
+    \textbf{Open Web Application Security Project} - organizacja non-profit zajmująca się \textbf{zagrożeniami i zabezpieczaniami} aplikacji
     webowych.
-
-    \begin{itemize}
-        \item A1:2017 - Injection
-        \item A2:2017 - Broken Authentication
-        \item A3:2017 - Sensitive Data Exposure
-        \item A4:2017 - XML External Entities (XXE)
-        \item A5:2017 - Broken Access Control
-        \item A6:2017 - Security Misconfiguration
-        \item A7:2017 - Cross-Site Scripting (XSS)
-        \item A8:2017 - Insecure Deserialization
-        \item A9:2017 - Using Components with Known Vulnerabilities
-        \item A10:2017 - Insufficient Logging \& Monitoring
-    \end{itemize}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{p{7cm} p{10cm}}
+                \begin{itemize}
+                    \item A1:2017 - Injection
+                    \item A2:2017 - Broken Authentication
+                    \item A3:2017 - Sensitive Data Exposure
+                    \item A4:2017 - XML External Entities (XXE)
+                    \item A5:2017 - Broken Access Control
+                \end{itemize}
+                &
+                \begin{itemize}
+                    \item A6:2017 - Security Misconfiguration
+                    \item A7:2017 - Cross-Site Scripting (XSS)
+                    \item A8:2017 - Insecure Deserialization
+                    \item A9:2017 - Using Components with Known Vulnerabilities
+                    \item A10:2017 - Insufficient Logging \& Monitoring
+                \end{itemize}
+            \end{tabular}
+        \end{center}
+    \end{table}
 
     \subsection{SQL Injection}
     \begin{itemize}
-        \item Polega na niedostatecznej walidacji i filtrowaniu wprowadzonych przez
-        użytkownika danych, które są wykorzystywane do tworzenia zapytania SQL
-        \item Dane te są interpretowane przez bazę jako elementy języka SQL, a nie -
+        \item Polega na \textbf{niedostatecznej walidacji} i \textbf{filtrowaniu} wprowadzonych przez
+        użytkownika danych, które są wykorzystywane do tworzenia \textbf{zapytania SQL}
+        \item Dane te są \textbf{interpretowane} przez bazę \textbf{jako elementy języka SQL}, a nie -
         zwykłe dane tekstowe.
-        \item Zabezpieczenia:
+        \item \textbf{Zabezpieczenia}:
         \begin{itemize}
-            \item Używanie prepared query (parametrized query) - zapytania parametryzowane.
-            Szkielet tych zapytań te są wstępnie parsowany/kompilowany na serwerze
-            bazy danych. A dopiero później uzupełniany o parametry.
-            \item Czyszczenie (sanitizing) wprowadzonych danych z niebezpiecznych znaków
-            (apostrofy, cudzysłowy, itp.). Znaki te można usuwać, albo zastępować
-            bezpiecznymi kombinacjami (escaping)
+            \item Używanie \textbf{prepared (parametrized) query} - szkielet tych zapytań jest \textbf{wstępnie parsowany}/kompilowany na serwerze
+            bazy danych, a dopiero później uzupełniany o parametry.
+            \item \textbf{Czyszczenie} (sanitizing) wprowadzonych \textbf{danych z niebezpiecznych znaków}
+            (apostrofy, cudzysłowy, itp.). Znaki te można usuwać, albo \textbf{zastępować bezpiecznymi kombinacjami} (\textbf{escaping}).
         \end{itemize}
     \end{itemize}
 
     \subsection{Cross-Site Scripting (XSS)}
     \begin{itemize}
-        \item W treści atakowanej strony wstawiany jest kod (najczęściej Javascript)
-        wykonujący niepożądaną akcję.
-        \item Kod ten jest wykonywany jest z aktualnymi uprawnieniami użytkownika, co
+        \item \textbf{W treści} atakowanej \textbf{strony wstawiany jest kod} (najczęściej Javascript)
+        wykonujący \textbf{niepożądaną akcję}.
+        \item Kod ten jest \textbf{wykonywany} jest z \textbf{aktualnymi uprawnieniami} użytkownika, co
         umożliwia mu dostęp i ewentualną zmianę danych prywatnych użytkownika
         \item Zabezpieczenia:
         \begin{itemize}
-            \item Podobnie jak w przypadku SQl Injection, sprawdzanie odbieranych przez
-            użytkownika danych. Usuwanie lub zamiana na zwykły tekst wszystkich
+            \item Podobnie jak w przypadku SQl Injection, \textbf{sprawdzanie odbieranych przez
+            użytkownika danych}. Usuwanie lub zamiana na zwykły tekst wszystkich
             instrukcji HTML. javascript, itp.
-            \item Używanie cookies z flagą HttpOnly (oraz Domain) co zabezpiecza przed
+            \item Używanie \textbf{cookies} z flagą \textbf{HttpOnly} (oraz \textbf{Domain}) co zabezpiecza przed
             dostępem do ciasteczek z poziomu skryptów. Skrypt nie może odczytać
             ciasteczka i przesłać do atakującego.
-            Nie zabezpiecza nas to jednak przed wykonaniem złośliwej akcji w
-            ramach istniejącej sesji na serwerze na który użytkownik jest zalogowany.
+            \textbf{Nie zabezpiecza} nas to jednak przed wykonaniem złośliwej akcji \textbf{w
+            ramach istniejącej sesji} na serwerze na który użytkownik jest zalogowany.
             Przeglądarka automatycznie dołącza ciasteczka do zapytań idących do
             serwera z pasującym Domain.
         \end{itemize}
@@ -59,22 +64,19 @@
 
     \subsection{Session hijacking}
     \begin{itemize}
-        \item Atakujący przechwytuje identyfikator sesji lub jest go w stanie przewidzieć i
-        wygenerować.
-        \item Posiadając identyfikator może połączyć się z serwerem w ramach sesji
-        autoryzowanej już przez jej właściciela i wykonać złośliwe działania.
-        \item Fatalnym pomysłem jest np. nadawanie kolejnych
-        numerów jako identyfikatory sesji!
+        \item Atakujący \textbf{przechwytuje identyfikator} sesji lub jest go w stanie \textbf{przewidzieć} i
+        \textbf{wygenerować}.
+        \item Posiadając identyfikator może \textbf{połączyć się} z serwerem \textbf{w ramach sesji
+        autoryzowanej} już przez jej właściciela i wykonać złośliwe działania.
+        \item Fatalnym pomysłem jest np. nadawanie kolejnych numerów jako identyfikatory sesji!
         \item Zabezpieczenia:
         \begin{itemize}
-            \item Generowanie niemożliwych do przewidzenia identyfikatorów sesji
-            \item Używanie HTTPS`
-            \item Umożliwienie użytkownikowi wylogowanie sie powodujące dezaktywacja sesji
-            i jej identyfikatora. WARNING: nie wszystkie sposoby autoryzacji dają taka
-            możliwość (np. tokeny JWT).
+            \item \textbf{Generowanie niemożliwych do przewidzenia} identyfikatorów sesji
+            \item Używanie \textbf{HTTPS}
+            \item \textbf{Umożliwienie} użytkownikowi \textbf{wylogowania się} powodujące dezaktywacja sesji
+            i jej identyfikatora.
         \end{itemize}
     \end{itemize}
-
 
     \subsection{Session Fixation}
     \begin{itemize}
@@ -85,17 +87,16 @@
         \begin{enumerate}
             \item Atakujący łączy się do strony logowania.
             \item Serwer zawraca stronę logowania z identyfikatorem sesji
-            \item Atakujący przesyła ofierze link do strony logowania z ustawionym swoim identyfikatorem sesji
+            \item \textbf{Atakujący przesyła ofierze link do strony logowania z ustawionym swoim identyfikatorem sesji}
             \item Ofiara loguje się na serwer używając przekazanego identyfikatora sesji
-            \item Ofiara loguje się na serwer używając przekazanego identyfikatora sesji
-            \item Użytkownik ładuje stronę z kontem ofiary używając wspólnego identyfikatora
-            sesji, która została już wcześniej autoryzowana przez ofiarę.
+            \item Użytkownik ładuje stronę z kontem ofiary używając \textbf{wspólnego identyfikatora
+            sesji}, która została już wcześniej autoryzowana przez ofiarę.
         \end{enumerate}
-        \item Zabezpieczenia:
+        \item \textbf{Zabezpieczenia}:
         \begin{itemize}
-            \item Zablokowanie przyjmowania Session ID w URL-u i parametrach POST.
+            \item \textbf{Zablokowanie} przyjmowania Session ID \textbf{w URL}-u i \textbf{parametrach POST}.
             Zabezpiecza przed pierwszymi dwoma typami ataków.
-            \item Generowanie nowej sesji (nowy Session ID) po zalogowaniu użytkownika.
+            \item Generowanie nowej sesji (\textbf{nowy Session ID}) po zalogowaniu użytkownika.
         \end{itemize}
     \end{itemize}
 
@@ -114,52 +115,43 @@
             \item Ofiara jest zalogowana na serwer (np. do banku)
             \item Atakujący podsuwa ofierze stronę, maila, itp. zawierającą link wykonujący
             złośliwą operację na serwerze (np. przelew bankowy).
-            \item Ofiara uruchamia podsunięty link w przeglądarce, w której aktywna jest sesja
+            \item Ofiara \textbf{uruchamia} podsunięty \textbf{link w przeglądarce}, w której \textbf{aktywna jest sesja}
             na serwer. W przypadku drugiego linka, ofiara nie musi nawet uruchamiać
             linka - zostanie on automatycznie uruchomiony w celu pobrania "obrazka"
             \item Link zawierający żądanie dla serwera zostaje przesłany na serwer wraz ze
             wszystkimi ciasteczkami (w tym z identyfikatorem sesji).
         \end{enumerate}
-        \item Zabezpieczenia:
+        \item \textbf{Zabezpieczenia}:
         \begin{itemize}
-            \item Synchronizer (CSRF) Tokens - Każda operacja zmieniająca stan aplikacji wymaga dodatkowego unikalnego jednorazowego tokenu (CSRF token).
-            \item Dodatkowa autoryzacja przez użytkownika - dodatkowe hasło, CAPTCHA, token jednorazowy
-            \item Atrybut SameSite w ciasteczku - zapobiega wysłaniu ciasteczka jeśli zapytanie nie pochodzi z tej samej strony/
-            serwisu, z której pochodzi ciasteczko.
-            \item Atrybut SameSite w ciasteczku - zapobiega wysłaniu ciasteczka jeśli zapytanie nie pochodzi z tej samej strony/
+            \item \textbf{Synchronizer Tokens} - Każda \textbf{operacja zmieniająca stan} aplikacji \textbf{wymaga dodatkowego} unikalnego \textbf{jednorazowego tokenu} (CSRF token).
+            \item \textbf{Dodatkowa autoryzacja} przez użytkownika - dodatkowe hasło, CAPTCHA, token jednorazowy
+            \item Atrybut \textbf{SameSite} w ciasteczku - zapobiega wysłaniu ciasteczka jeśli \textbf{zapytanie nie pochodzi z tej samej strony}/
             serwisu, z której pochodzi ciasteczko.
             \item \textbf{CORS}
         \end{itemize}
     \end{itemize}
 
-
-
-    \textbf{Same Origin Policy}
+    \subsection{SOP i CORS}
+    \subsubsection{Same Origin Policy (SOP)}
     \begin{itemize}
         \item Aby zabezpieczyć się przed CSRF zasób (skrypt) pobrany z danej lokalizacji
-        (Origin) może czytać dane i wysyłać jedynie do innych zasobów z *tej samej
-        lokalizacji). (Same Origin Policy`)
+        (Origin) może czytać dane i wysyłać jedynie do innych  \textbf{zasobów z tej samej
+        lokalizacji}).
         \item Lokalizacja = scheme + host + port
         \item \textbf{Problemy z SOP} - czasami chcemy zezwolić na dostęp do naszych zasobów z zewnątrz. Na
-        przykład udostępniając publiczne API, fonty, skrypty.
+        przykład udostępniając  \textbf{publiczne API}, fonty, skrypty.
     \end{itemize}
 
-    NOTICE: Brak takiego zabezpieczenia spowodowałby możliwość wywołania
-    https://bank-example.com/transferFunds przy wejściu na stronę https://
-    evil-example.com/bad.html. Jeśli użytkownik byłby juz zalogowany w banku, to
-    transferFunds wykonałby się z jego uprawnieniami.
-
-    \textbf{CORS} = Cross-Origin Resource Sharing.
+    \subsubsection{Cross-Origin Resource Sharing (CORS)}
     \begin{itemize}
-        \item Każde żądanie w trybie CORS powoduje dodanie prze przeglądarkę do
-        zapytania nagłówka Origin z adresem serwisu z którego pochodzi strona
+        \item \textbf{Każde żądanie} w trybie CORS powoduje dodanie prze przeglądarkę do
+        zapytania nagłówka \textbf{Origin} z adresem serwisu z którego pochodzi strona
         wysyłająca żądanie.
-        \item Nagłówek jest ustawiany przez przeglądarkę i kod użytkownika nie ma
+        \item \textbf{Nagłówek} jest \textbf{ustawiany przez przeglądarkę} i kod użytkownika nie ma
         możliwości zmiany tego nagłówka.
         \item Serwer odpowiada z nagłówkiem
         \item Przeglądarka sprawdza, czy zwrócona wartość pozwala na udostępnienie
         zasobu i przekazuje go do kodu strony tylko wtedy, gdy jest to dozwolone.
-        \item Istnieje tez możliwość wymuszenia dodatkowej autoryzacji.
+        \item Istnieje tez możliwość \textbf{wymuszenia dodatkowej autoryzacji}.
     \end{itemize}
-
 \end{document}

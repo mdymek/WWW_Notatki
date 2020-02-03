@@ -4,103 +4,98 @@
 
     \subsection{AJAX}
     \begin{itemize}
-        \item AJAX (Asynchronous JavaScript and XML) - technika wykonywania zapytań
-        HTTP i pobierania z poziomu aplikacji internetowej w przeglądarce WWW bez
-        potrzeby przeładowania całej strony.
-        \item Bazuje na obiekcie XMLHttpRequest (często używany jest skrót XHR) opisanym
-        w standardzie https://xhr.spec.whatwg.org/ .
-        \item Implementowany przez wszystkie przeglądarki i dostępny z poziomu kodu
+        \item AJAX (\textbf{Asynchronous JavaScript and XML}) - \textbf{technika wykonywania zapytań}
+        HTTP i \textbf{pobierania} z poziomu aplikacji internetowej w przeglądarce WWW \textbf{bez
+        potrzeby przeładowania} całej strony.
+        \item \textbf{Bazuje} na obiekcie \textbf{XMLHttpRequest} (często używany jest skrót XHR).
+        \item Implementowany przez \textbf{wszystkie przeglądarki} i dostępny z poziomu kodu
         Javascript.
-        \item Umożliwia wysłania żądania HTTP do serwera, pobrania zasobów
-        przetworzenia ich w kodzie Javascriptu bez potrzeby przeładowania całej
+        \item Umożliwia \textbf{wysłanie żądania} HTTP do serwera, \textbf{pobranie zasobów},
+        \textbf{przetworzenie} ich w kodzie Javascriptu bez potrzeby przeładowania całej
         strony.
         \item Oryginalnie wykorzystywany przede wszystkim do pobierania danych w
-        formacie XML, obecnie bardzo popularny jest JSON.
+        \textbf{formacie XML}, obecnie bardzo popularny jest \textbf{JSON}.
     \end{itemize}
 
-    Obiekt XMLHttpRequest
+    \subsubsection{Obiekt XMLHttpRequest}
     \begin{itemize}
-        \item Zwróconą zawartość można uzyskać z pomocą
+        \item \textbf{Zwróconą zawartość} można uzyskać z pomocą
         \begin{itemize}
-            \item responseText - w postaci tekstu
-            \item responseXML - jako obiekt dokumentu XML
+            \item \textbf{responseText} - w postaci tekstu
+            \item \textbf{responseXML} - jako obiekt dokumentu XML
         \end{itemize}
-        \item W nowszych wersjach przeglądarek pole responseType pozwala na
-        ustawienie typu zwracanej zwartości. Możliwe są między innymi wartości:
+        \item W nowszych wersjach przeglądarek pole \textbf{responseType} pozwala na
+        \textbf{ustawienie typu} zwracanej zawartości. Możliwe są między innymi wartości:
         \begin{itemize}
-            \item "text" - wynik zwracay jako string
-            \item "document" - wynik zwracany jako dokument HTML (obiekt Document) lub dokument XML (obiekt XMLDocument)
-            \item "json" - obiekt Javascript powstały na podstawie przesłanego JSON-a.
+            \item \textbf{"text"} - wynik zwracay jako string
+            \item \textbf{"document"} - wynik zwracany jako dokument HTML lub XML
+            \item \textbf{"json"} - obiekt Javascript powstały na podstawie przesłanego JSON-a.
         \end{itemize}
-        \item Pole readyState może przyjmować następujące wrtaości:
+        \item Pole \textbf{readyState} może przyjmować następujące wartości:
         \begin{itemize}
-            \item 0 - zapytanie niezainicjowane
-            \item 1 - zapytanie otwarte
-            \item 2 - zapytanie wysłane
-            \item 3 - odbieranie odpowiedzi
-            \item 4 - zapytanie zakończone
+            \item \textbf{0} - zapytanie \textbf{niezainicjowane}
+            \item \textbf{1} - zapytanie \textbf{otwarte}
+            \item \textbf{2} - zapytanie \textbf{wysłane}
+            \item \textbf{3} - \textbf{odbieranie odpowiedzi}
+            \item \textbf{4} - zapytanie \textbf{zakończone}
         \end{itemize}
         Uwaga: Jeśli przekazywana treść nie jest w odpowiednim formacie otrzymamy
-        null.
-        \item Metoda setRequestHeader() umożliwia ustawienie nagłówka w wysyłanym
-        zapytaniu.
+        \textbf{null}.
+        \item Metoda \textbf{setRequestHeader}() umożliwia \textbf{ustawienie nagłówka} w wysyłanym \textbf{zapytaniu}.
         \item W starych wersjach Internet Explorera (IE 5/6) obiekt XMLHttpRequest należało
-        uzyskać poprzez wywołanie
+        uzyskać poprzez wywołanie.
         \item Z powodów bezpieczeństwa współczesne przeglądarki standardowo
-        pozwalają jedynie na ładowanie zasobów z tego samego serwera z którgo była
+        pozwalają jedynie na \textbf{ładowanie zasobów z tego samego serwera} z którgo była
         załadowana strona główna. Jednym ze sposobów na obejście tego problemu
-        jest protokół CORS (Cross-domain requests).
+        jest protokół \textbf{CORS (Cross-domain requests)}.
     \end{itemize}
 
-    Fetch API - nowy interejs służący do pobierania zasobów.
+    \subsection{Fetch API}
     \begin{itemize}
-        \item Ma zastąpić XMLHttpRequest
-        \item Oparte na javasciptowych Promise
-        \item API niskopoziomowe!
-        \item Mamy kontrolę nad wszystkimi parametrami zapytania HTTP.
-        \item Należy samodzielnie ustawiać wszystkie niezbędne nagłówki, ciasteczka, itp
-        Jako błąd (Promise.reject()) traktowana jest sytuacja nie możności pobrania
-        zasobu w wyniku błędu sieciowego.
+        \item \textbf{Nowy interfejs} służący do \textbf{pobierania zasobów}, mający zastąpić XMLHttpRequest
+        \item Oparte na \textbf{javasciptowych Promise}. Obiekt Promise reprezentuje \textbf{ewentualne zakończenie} (lub porażkę) \textbf{asynchronicznej operacji} i jej wartości.
+        \item API \textbf{niskopoziomowe}
+        \item Mamy \textbf{kontrolę nad wszystkimi parametrami zapytania} HTTP.
+        \item Należy \textbf{samodzielnie ustawiać} wszystkie niezbędne \textbf{nagłówki}, ciasteczka, itp
+        \item Jako \textbf{błąd} (Promise.reject()) traktowana jest sytuacja nie możności pobrania
+        zasobu w wyniku \textbf{błędu sieciowego}.
         \item Nawet dla odpowiedzi z kodem HTTP 404 obsługa przebiega normalnie, tylko
         status ok jest ustawiany na false.
     \end{itemize}
 
-
     \subsection{REST}
     \begin{itemize}
-        \item REST = Representational State Transfer
-        \item Podejście zaproponowane przez Roya T. Fieldinga w 2000 r. w jego pracy doktorskiej Architectural Styles and the Designs of Network Based Architectures
-        \item Oparty na pojęciu zasobu identyfikowanego przy pomocy URI i mogącego posiadać różne reprezentacje (np. XML, JSON).
-        \item Operacje na zasobach wykorzystują metody protokołu HTTP takie jak (GET, POST, PUT, DELETE, itd.)
-        \item Status operacji są zwracane jako statusy protokołu HTTP
-        \item Zakładamy bezstanowość: każda operacja stanowi niezależną całość i serwer może ją zrozumieć i zrealizować bez znajomości poprzednich komunikatów
-        \item Format (reprezentacja) zwracanych danych powinna być określana w nagłówku Content-type. Np. text/xml, application/json
-        \item W praktyce rzadko spotyka się serwery całkowicie zgodne z wytycznymi REST
-        \item Częste odstępstwa:
+        \item REST = \textbf{Representational State Transfer}
+        \item Podejście zaproponowane przez Roya T. Fieldinga w \textbf{2000}r.
+        \item Oparty na pojęciu \textbf{zasobu identyfikowanego} przy pomocy \textbf{URI} i mogącego posiadać \textbf{różne reprezentacje} (np. XML, JSON).
+        \item Operacje na zasobach wykorzystują \textbf{metody protokołu HTTP} (GET, POST, DELETE, itd.)
+        \item \textbf{Statusy operacji} są zwracane jako \textbf{statusy protokołu} HTTP
+        \item Zakładamy \textbf{bezstanowość}: każda operacja stanowi niezależną całość
+        \item \textbf{Format} zwracanych danych powinna być \textbf{określana w nagłówku Content-type}, np. text/xml
+        \item W praktyce \textbf{rzadko spotyka się} serwery \textbf{całkowicie zgodne z wytycznymi} REST
+        \item Częste \textbf{odstępstwa}:
         \begin{itemize}
-            \item Wykorzystanie własnych kodów błędów
-            \item Przekazywanie operacji w URL-u zamiast jako metody HTTP (np. POST / delete/book/123)
-            \item Przekazywanie formaty zwracanych danych w URL-u jako Content-type (np. GET /book/123?fmt=json)
+            \item Wykorzystanie \textbf{własnych kodów błędów}
+            \item \textbf{Przekazywanie} operacji \textbf{w URL-u zamiast} jako \textbf{metody HTTP}
+            \item \textbf{Przekazywanie formatu} zwracanych danych \textbf{w URL}-u
         \end{itemize}
-        \item Czysty REST niezbyt dobrze nadaje się do API zorientowanego na operacje
-        zamiast na zasoby.
+        \item Czysty REST \textbf{niezbyt dobrze nadaje się} do API \textbf{zorientowanego na operacje} zamiast na zasoby.
     \end{itemize}
 
     \subsection{SOAP}
     \begin{itemize}
-        \item SOAP = Simple Object Access Protocol
-        \item Starszy i bardziej skomplikowany protokół niż REST
-        \item SOAP jest protokołem, a nie jedynie stylem budowania API
-        \item Oparty na XML
-        \item Można go wykorzystywać do przekazywania danych/zasobów lub do
-        wywoływania procedur/operacji
-        \item Używany przede wszystkim w ramach protokołu HTTP, ale może działąć na innych protokołach transportowych
-        \item Wbudowana obsluga błędów i protokołów bezpieczenistwa (WS-Security:
-        m.in. podpisywanie i szyfrowanie wiadomości)
-        \item Posiada dodatkowy język opisu udostępnianych operacji i danych (WSDL)
-        \item Ma ścisle określoną (dość skomplikowaną) strukturę. Wymaga przekazywania
+        \item \textbf{Simple Object Access Protocol}
+        \item Starszy i \textbf{bardziej skomplikowany} protokół \textbf{niż REST}
+        \item SOAP jest \textbf{protokołem}, a \textbf{nie} jedynie \textbf{stylem budowania} API
+        \item Oparty na \textbf{XML}
+        \item Można go wykorzystywać do \textbf{przekazywania danych}/zasobów lub do \textbf{wywoływania procedur}/operacji
+        \item Używany przede wszystkim \textbf{w ramach protokołu HTTP}, ale \textbf{może działąć na innych} protokołach
+        transportowych
+        \item Wbudowana \textbf{obsługa błędów i protokołów bezpieczeństwa} (WS-Security: m.in. podpisywanie i
+        szyfrowanie wiadomości)
+        \item Posiada \textbf{dodatkowy język opisu udostępnianych} operacji i danych (\textbf{WSDL})
+        \item Ma \textbf{ścisle określoną} (dość skomplikowaną) \textbf{strukturę}. Wymaga przekazywania
         sporej ilości dodatkowych danych.
         \item "SOAP is like an envelope, whereas REST is like a postcard"
     \end{itemize}
-
 \end{document}

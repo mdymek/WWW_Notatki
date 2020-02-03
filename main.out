@@ -1,38 +1,65 @@
 \BOOKMARK [1][-]{section.1}{Wstep.}{}% 1
 \BOOKMARK [1][-]{section.2}{URL i HTTP.}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{URI}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Protok\363\233 HTTP}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Metody bezpieczne i dempotentne.}{subsection.2.2}% 5
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Nag\233\363wki.}{subsection.2.2}% 6
-\BOOKMARK [1][-]{section.3}{HTML.}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{HTTP - HyperText Markup Language.}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{CSS.}{}% 9
-\BOOKMARK [2][-]{subsubsection.4.0.1}{Selektory}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.1}{Box Model}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.2}{Dodatki}{section.4}% 12
-\BOOKMARK [1][-]{section.5}{Javascript}{}% 13
-\BOOKMARK [2][-]{subsection.5.1}{DOM i BOM}{section.5}% 14
-\BOOKMARK [1][-]{section.6}{React.}{}% 15
-\BOOKMARK [1][-]{section.7}{Node.js}{}% 16
-\BOOKMARK [2][-]{subsubsection.7.0.1}{NPM - Node Package Manager.}{section.7}% 17
-\BOOKMARK [1][-]{section.8}{ExpressJS}{}% 18
-\BOOKMARK [2][-]{subsection.8.1}{CommonJS}{section.8}% 19
-\BOOKMARK [2][-]{subsection.8.2}{Express.JS}{section.8}% 20
-\BOOKMARK [3][-]{subsubsection.8.2.1}{Model MVC \(Model-View-Controller\)}{subsection.8.2}% 21
-\BOOKMARK [2][-]{subsection.8.3}{Szablony}{section.8}% 22
-\BOOKMARK [1][-]{section.9}{Zarzadzanie sesjami w aplikacjach webowych}{}% 23
-\BOOKMARK [2][-]{subsection.9.1}{Autentykacja uzytkownika}{section.9}% 24
-\BOOKMARK [1][-]{section.10}{Komunikacja Frontend-Backend}{}% 25
-\BOOKMARK [2][-]{subsection.10.1}{AJAX}{section.10}% 26
-\BOOKMARK [2][-]{subsection.10.2}{REST}{section.10}% 27
-\BOOKMARK [2][-]{subsection.10.3}{SOAP}{section.10}% 28
-\BOOKMARK [1][-]{section.11}{Spring vs JEE}{}% 29
-\BOOKMARK [2][-]{subsection.11.1}{JEE}{section.11}% 30
-\BOOKMARK [2][-]{subsection.11.2}{Spring}{section.11}% 31
-\BOOKMARK [1][-]{section.12}{Bezpieczenstwo}{}% 32
-\BOOKMARK [2][-]{subsection.12.1}{OWASP Top 10 Application Security Risks 2017}{section.12}% 33
-\BOOKMARK [2][-]{subsection.12.2}{SQL Injection}{section.12}% 34
-\BOOKMARK [2][-]{subsection.12.3}{Cross-Site Scripting \(XSS\)}{section.12}% 35
-\BOOKMARK [2][-]{subsection.12.4}{Session hijacking}{section.12}% 36
-\BOOKMARK [2][-]{subsection.12.5}{Session Fixation}{section.12}% 37
-\BOOKMARK [2][-]{subsection.12.6}{Cross-Site Request Forgery}{section.12}% 38
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Sk\233adnia URI}{subsection.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Protok\363\233 HTTP}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Metody bezpieczne i dempotentne.}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Nag\233\363wki.}{subsection.2.2}% 7
+\BOOKMARK [1][-]{section.3}{HTML - HyperText Markup Language.}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{XHTML}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{HTML 5}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{CSS.}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Selektory}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Priorytety}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{Specyficznosc.}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.4}{Box Model}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.5}{Dodatki}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Javascript}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{IIFE \(Immediately Invoked Function Expression\)}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{DOM i BOM}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{React.}{}% 20
+\BOOKMARK [1][-]{section.7}{Node.js}{}% 21
+\BOOKMARK [2][-]{subsection.7.1}{Architektura}{section.7}% 22
+\BOOKMARK [2][-]{subsection.7.2}{NPM - Node Package Manager.}{section.7}% 23
+\BOOKMARK [1][-]{section.8}{ExpressJS}{}% 24
+\BOOKMARK [2][-]{subsection.8.1}{CommonJS}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.2}{Express.JS}{section.8}% 26
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Routing}{subsection.8.2}% 27
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Model MVC \(Model-View-Controller\)}{subsection.8.2}% 28
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Szablony}{subsection.8.2}% 29
+\BOOKMARK [1][-]{section.9}{Zarzadzanie sesjami w aplikacjach webowych}{}% 30
+\BOOKMARK [2][-]{subsection.9.1}{Identyfikator sesji}{section.9}% 31
+\BOOKMARK [2][-]{subsection.9.2}{Techniki przekazywania identyfikatora sesji}{section.9}% 32
+\BOOKMARK [3][-]{subsubsection.9.2.1}{Przepisywanie URL \(URL Rewriting\)}{subsection.9.2}% 33
+\BOOKMARK [3][-]{subsubsection.9.2.2}{Ukryte pola formularza \(hidden fields\)}{subsection.9.2}% 34
+\BOOKMARK [3][-]{subsubsection.9.2.3}{Cookies}{subsection.9.2}% 35
+\BOOKMARK [2][-]{subsection.9.3}{Http Session}{section.9}% 36
+\BOOKMARK [2][-]{subsection.9.4}{Filtr Servlet}{section.9}% 37
+\BOOKMARK [2][-]{subsection.9.5}{Autentykacja uzytkownika}{section.9}% 38
+\BOOKMARK [3][-]{subsubsection.9.5.1}{HTTP basic authentication}{subsection.9.5}% 39
+\BOOKMARK [3][-]{subsubsection.9.5.2}{Cookies}{subsection.9.5}% 40
+\BOOKMARK [3][-]{subsubsection.9.5.3}{Tokeny}{subsection.9.5}% 41
+\BOOKMARK [1][-]{section.10}{Komunikacja Frontend-Backend}{}% 42
+\BOOKMARK [2][-]{subsection.10.1}{AJAX}{section.10}% 43
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Obiekt XMLHttpRequest}{subsection.10.1}% 44
+\BOOKMARK [2][-]{subsection.10.2}{Fetch API}{section.10}% 45
+\BOOKMARK [2][-]{subsection.10.3}{REST}{section.10}% 46
+\BOOKMARK [2][-]{subsection.10.4}{SOAP}{section.10}% 47
+\BOOKMARK [1][-]{section.11}{Spring vs JEE}{}% 48
+\BOOKMARK [2][-]{subsection.11.1}{JEE}{section.11}% 49
+\BOOKMARK [2][-]{subsection.11.2}{Spring}{section.11}% 50
+\BOOKMARK [3][-]{subsubsection.11.2.1}{Kontener IoC}{subsection.11.2}% 51
+\BOOKMARK [3][-]{subsubsection.11.2.2}{Wstrzykiwanie zaleznosci w Springu}{subsection.11.2}% 52
+\BOOKMARK [3][-]{subsubsection.11.2.3}{Bean scopes}{subsection.11.2}% 53
+\BOOKMARK [3][-]{subsubsection.11.2.4}{MVC}{subsection.11.2}% 54
+\BOOKMARK [3][-]{subsubsection.11.2.5}{Dispatcher Servlet}{subsection.11.2}% 55
+\BOOKMARK [1][-]{section.12}{Bezpieczenstwo}{}% 56
+\BOOKMARK [2][-]{subsection.12.1}{OWASP Top 10 Application Security Risks 2017}{section.12}% 57
+\BOOKMARK [2][-]{subsection.12.2}{SQL Injection}{section.12}% 58
+\BOOKMARK [2][-]{subsection.12.3}{Cross-Site Scripting \(XSS\)}{section.12}% 59
+\BOOKMARK [2][-]{subsection.12.4}{Session hijacking}{section.12}% 60
+\BOOKMARK [2][-]{subsection.12.5}{Session Fixation}{section.12}% 61
+\BOOKMARK [2][-]{subsection.12.6}{Cross-Site Request Forgery}{section.12}% 62
+\BOOKMARK [2][-]{subsection.12.7}{SOP i CORS}{section.12}% 63
+\BOOKMARK [3][-]{subsubsection.12.7.1}{Same Origin Policy \(SOP\)}{subsection.12.7}% 64
+\BOOKMARK [3][-]{subsubsection.12.7.2}{Cross-Origin Resource Sharing \(CORS\)}{subsection.12.7}% 65

@@ -17,6 +17,21 @@
 \usepackage{multirow}
 \usepackage{xparse}
 \usepackage[most]{tcolorbox}
+\usepackage{fancyvrb,newverbs,xcolor}
+
+\definecolor{cverbbg}{gray}{0.93}
+
+\definecolor{battleshipgray}{rgb}{0.52, 0.52, 0.51}
+
+\newenvironment{lcverbatim}
+{\SaveVerbatim{cverb}}
+{\endSaveVerbatim
+\flushleft\fboxrule=0pt\fboxsep=.5em
+\colorbox{cverbbg}{%
+\makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+}
+\endflushleft
+}
 
 \NewDocumentCommand{\newframedtheorem}{O{}momo}{%
 \IfNoValueTF{#3}
@@ -52,7 +67,7 @@ sharp corners,
     \subfile{wyk2}
     \subfile{wyk3}
 
-    \section{HTML.}
+    \section{HTML - HyperText Markup Language.}
     \subfile{wyk4}
 
     \section{CSS.}

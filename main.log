@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.14)  10 JAN 2020 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.14)  3 FEB 2020 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,44 +961,59 @@ File: pgflibraryfadings.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '4.20'
-))
-\c@theorem=\count311
- (./main.aux)
+)) (/usr/local/texlive/2019/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2019/01/15
+
+Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
+\FV@CodeLineNo=\count311
+\FV@InFile=\read4
+\FV@TabBox=\box75
+\c@FancyVerbLine=\count312
+\FV@StepNumber=\count313
+\FV@OutFile=\write6
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newverbs/newverbs.sty
+Package: newverbs 2012/05/08 v1.3a Define new 'verb' commands and short verb. c
+haracters
+)
+\c@theorem=\count314
+
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 60.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count312
+\scratchcounter=\count315
 \scratchdimen=\dimen273
-\scratchbox=\box75
-\nofMPsegments=\count313
-\nofMParguments=\count314
+\scratchbox=\box76
+\nofMPsegments=\count316
+\nofMParguments=\count317
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count315
+\MPscratchCnt=\count318
 \MPscratchDim=\dimen274
-\MPnumerator=\count316
-\makeMPintoPDFobject=\count317
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
 \everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1017,8 +1032,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring OFF on input line 45.
+\AtBeginShipoutBox=\box77
+Package hyperref Info: Link coloring OFF on input line 60.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1026,40 +1041,40 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count318
+\c@section@level=\count321
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
-LaTeX Info: Redefining \nameref on input line 45.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 (./main.out) (./main.out)
-\@outlinefile=\write6
-\openout6 = `main.out'.
+\@outlinefile=\write7
+\openout7 = `main.out'.
 
-\c@lstlisting=\count319
-LaTeX Font Info:    Try loading font information for OML+plm on input line 47.
+\c@lstlisting=\count322
+LaTeX Font Info:    Try loading font information for OML+plm on input line 62.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 47.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 62.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 47.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 62.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 47.
+(Font)              <12> on input line 62.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 47.
+(Font)              <8> on input line 62.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 47.
+(Font)              <6> on input line 62.
  (./wyk1.tex
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 6.
 
@@ -1073,23 +1088,12 @@ File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 6.
-
-Overfull \hbox (1.75536pt too wide) in paragraph at lines 17--18
-[]\T1/lmr/m/n/10 Serwlety - nie-wiel-kie apli-ka-cje (naj-cz¦-sciej w Ja-vie) r
-oz-sze-rza-j¡-ce mo-zlie-wo-±ci swer-we-ra WWW.
- []
-
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <10> on input line 32.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <7> on input line 32.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <5> on input line 32.
-
-Underfull \hbox (badness 1755) in paragraph at lines 49--50
-[]\T1/lmr/m/n/10 Ró»ne frag-men-ty apli-ka-cj-ji s¡ wy-±wie-tla-ne
- []
-
 
 Overfull \hbox (26.27618pt too wide) in paragraph at lines 32--54
  [] 
@@ -1099,67 +1103,71 @@ Overfull \hbox (26.27618pt too wide) in paragraph at lines 32--54
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 (./wyk2.tex
-Overfull \hbox (26.27618pt too wide) in paragraph at lines 8--20
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 6--21
  [] 
  []
 
 [2]
-Overfull \hbox (26.27618pt too wide) in paragraph at lines 74--95
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 61.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 86--106
+ [] 
+ []
+
+
+Overfull \hbox (40.50256pt too wide) in paragraph at lines 111--140
  [] 
  []
 
 [3]
-Underfull \hbox (badness 2460) in paragraph at lines 158--159
-[]\T1/lmr/m/n/10 Przycisk Wste-cz/ Od-±wie-»e-nie
+Underfull \hbox (badness 5008) in paragraph at lines 153--154
+[]\T1/lmr/m/n/10 Dane zo-sta-n¡ po-wtór-nie prze-sªa-ne.
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 162--164
-[]\T1/lmr/m/n/10 Dane zo-sta-n¡ po-wtór-nie prze-
+Underfull \hbox (badness 1275) in paragraph at lines 153--154
+\T1/lmr/m/n/10 (prze-gl¡-dar-ka po-win-na ostrzec u»yt-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
-\T1/lmr/m/n/10 sªa-ne. (prze-gl¡-dar-ka pwo-in-na
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+[]\T1/lmr/m/n/10 application/x-www-form-urlencoded
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 162--164
-\T1/lmr/m/n/10 ostrzec u»yt-kow-ni-ka, »e da-ne
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+\T1/lmr/m/n/10 lub multipart/form-data. Dla da-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
-[]\T1/lmr/m/n/10 application/x-www-form-
+Underfull \hbox (badness 2903) in paragraph at lines 160--162
+\T1/lmr/m/n/10 nych bi-nar-nych u»y-wa-my mul-ti-part
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
-[]\T1/lmr/m/n/10 application/x-www-form-
+Underfull \hbox (badness 1173) in paragraph at lines 166--166
+[]\T1/lmr/bx/n/10 Ograniczenia na dªu-
  []
 
 
-Underfull \hbox (badness 7047) in paragraph at lines 183--185
-\T1/lmr/m/n/10 data. Dla da-nych bi-nar-nych
+Underfull \hbox (badness 6188) in paragraph at lines 166--166
+\T1/lmr/bx/n/10 go±¢ prze-ka-zy-wa-nych
  []
 
 
-Underfull \hbox (badness 1152) in paragraph at lines 204--206
-[]\T1/lmr/m/n/10 Brak ogra-ni-cze«. Do-zwol-ne s¡
+Underfull \hbox (badness 1688) in paragraph at lines 166--167
+[]\T1/lmr/m/n/10 Metoda GET do-da-je pa-ra-me-try do
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 209--211
-\T1/lmr/m/n/10 bo da-ne s¡ prze-ka-zy-wan ja-ko
- []
-
-
-Overfull \hbox (9.82344pt too wide) in paragraph at lines 151--216
+Overfull \hbox (38.27617pt too wide) in paragraph at lines 145--177
  [] 
  []
 
 
-Overfull \hbox (9.82343pt too wide) in paragraph at lines 222--282
+Overfull \hbox (9.82343pt too wide) in paragraph at lines 183--253
  [] 
  []
 
@@ -1168,14 +1176,28 @@ Overfull \hbox (9.82344pt too wide) in paragraph at lines 17--37
  [] 
  []
 
-) (./wyk4.tex [6]
-Overfull \hbox (1.82684pt too wide) in paragraph at lines 16--19
-\T1/lmr/m/n/10 1.0 Trans-i-tio-na-l//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml
-1-transitional.dtd"> i mu-si za-
+
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 44--71
+ [] 
  []
 
-[7]
-Overfull \hbox (50.27618pt too wide) in paragraph at lines 58--67
+) (./wyk4.tex [6]
+Underfull \hbox (badness 2818) in paragraph at lines 45--46
+[]\T1/lmr/m/n/10 Usuni¦to nie-któ-re \T1/lmr/bx/n/10 zde-pre-cjo-no-wa-ne ele-
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 46--47
+\T1/lmr/m/n/10 j¡-cych atry-bu-tów i ele-men-tów (np <i> i
+ []
+
+
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 22--57
+ [] 
+ []
+
+
+Overfull \hbox (50.27618pt too wide) in paragraph at lines 64--73
  [] 
  []
 
@@ -1184,158 +1206,151 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
+[7]
+Overfull \hbox (40.27618pt too wide) in paragraph at lines 24--46
+ [] 
+ []
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 17.
+
+Overfull \hbox (38.27618pt too wide) in paragraph at lines 52--76
+ [] 
+ []
 
 
-Overfull \hbox (50.27618pt too wide) in paragraph at lines 32--41
+Overfull \hbox (9.82343pt too wide) in paragraph at lines 86--92
  [] 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-
+Underfull \hbox (badness 1014) in paragraph at lines 103--104
+[]\T1/lmr/m/n/10 Zawarto±¢ ele-men-tu (\T1/lmr/bx/n/10 content\T1/lmr/m/n/10 ) 
+jest oto-czo-
  []
 
-<graphics/boxmodel.png, id=250, 337.26pt x 222.8325pt>
+<graphics/boxmodel.png, id=345, 337.26pt x 222.8325pt>
 File: graphics/boxmodel.png Graphic file (type png)
 <use graphics/boxmodel.png>
-Package pdftex.def Info: graphics/boxmodel.png  used on input line 100.
+Package pdftex.def Info: graphics/boxmodel.png  used on input line 107.
 (pdftex.def)             Requested size: 227.62204pt x 150.39525pt.
 
-Overfull \hbox (26.27618pt too wide) in paragraph at lines 94--103
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 100--110
  [] 
  []
 
-[9 <./graphics/boxmodel.png>]) (./wyk6.tex [10]
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-[]\T1/lmr/m/n/10 Wykrywanie ele-men-tów: do-cu-
+) (./wyk6.tex [9 <./graphics/boxmodel.png>]
+Underfull \hbox (badness 6493) in paragraph at lines 56--57
+[]\T1/lmr/m/n/10 Zmiana ele-men-tów: \T1/lmr/bx/n/10 ele-ment \T1/lmr/m/n/10 .a
+t-tri-bu-te=,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-\T1/lmr/m/n/10 ment.getElementById, By-Ta-gNa-me, ByC-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-\T1/lmr/m/n/10 las-sNa-me, ByC-las-sNa-me, qu-ery-Se-lec-to-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-[]\T1/lmr/m/n/10 Zmiana ele-men-tów: ele-ment.attribute=,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-\T1/lmr/m/n/10 se-tAt-tri-bu-te(attribute,value), ele-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 []\T1/lmr/m/n/10 Dodawanie/usuwanie ele-men-tów: do-cu-
  []
 
 
-Underfull \hbox (badness 7081) in paragraph at lines 64--65
+Underfull \hbox (badness 7081) in paragraph at lines 57--58
 \T1/lmr/m/n/10 ment.createElement, ap-pend-Child, re-pla-ce-
  []
 
 
-Overfull \hbox (26.27618pt too wide) in paragraph at lines 55--85
+Underfull \hbox (badness 3312) in paragraph at lines 59--60
+[]\T1/lmr/m/n/10 Najlepiej u»y-wa¢ me-tod: \T1/lmr/bx/n/10 ad-dE-ven-tLi-ste-
+ []
+
+
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 48--77
  [] 
  []
 
-) (./wyk7.tex
+) (./wyk7.tex [10]
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-[11]) (./wyk8.tex
-Underfull \hbox (badness 1092) in paragraph at lines 29--30
-[]\T1/lmr/m/n/10 Brak na-rzu-tów zwi¡-za-nych z two-rze-niem i
+) (./wyk8.tex
+Underfull \hbox (badness 1616) in paragraph at lines 39--40
+[]\T1/lmr/bx/n/10 Callback hell \T1/lmr/m/n/10 ^^U pro-blem z utrzy-ma-niem
  []
 
 
-Overfull \hbox (26.27618pt too wide) in paragraph at lines 22--47
+Overfull \hbox (54.72894pt too wide) in paragraph at lines 20--42
  [] 
  []
 
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 50.
+[11]) (./wyk9.tex
+Overfull \hbox (3.15802pt too wide) in paragraph at lines 40--43
+\T1/lmr/m/n/10 no-wa-ne w express_router.js b¦-d¡ do-st¦p-ne w pod ad-re-sem $\
+OML/plm/m/it/10 =express[]router$ \T1/lmr/m/n/10 oraz $\OML/plm/m/it/10 =expres
+s[]router=about$\T1/lmr/m/n/10 . 
+ []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
- []
-
-) (./wyk9.tex
-Overfull \hbox (10.20624pt too wide) in paragraph at lines 38--39
-[]\T1/lmr/m/n/10 Definiowanie ob-sªu-gi dla po-szcze-gól-nych me-tod i ±cie-»ek
-: app.get(), app.post(), app.put(), app.delete()
- []
-
-[13]
-<graphics/mvc.png, id=276, 764.8575pt x 453.695pt>
+<graphics/mvc.png, id=367, 764.8575pt x 453.695pt>
 File: graphics/mvc.png Graphic file (type png)
 <use graphics/mvc.png>
 Package pdftex.def Info: graphics/mvc.png  used on input line 53.
 (pdftex.def)             Requested size: 452.9679pt x 268.68846pt.
-) (./wyk10.tex [14 <./graphics/mvc.png>]
-Overfull \hbox (26.27618pt too wide) in paragraph at lines 42--54
+) (./wyk10.tex [13 <./graphics/mvc.png>]
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 41--53
  [] 
  []
 
-[15] [16]) (./wyk10.5.tex [17] [18]
-Overfull \hbox (43.69005pt too wide) in paragraph at lines 83--84
-[]\T1/lmr/m/n/10 Przekazywanie for-ma-ty zwra-ca-nych da-nych w URL-u ja-ko Con
-tent-type (np. GET /bo-ok/123?fmt=json) 
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
  []
 
-) (./wyk11.tex [19] [20]) (./wyk12.tex [21] [22]
-Overfull \hbox (55.91951pt too wide) in paragraph at lines 147--151
-[]\T1/lmr/m/n/10 NOTICE: Brak ta-kie-go za-bez-pie-cze-nia spo-wo-do-waª-by mo»
--li-wo±¢ wy-wo-ªa-nia https://bank-example.com/transferFunds
+[15]) (./wyk10.5.tex [16] [17]) (./wyk11.tex [18] [19]
+Overfull \hbox (26.27618pt too wide) in paragraph at lines 82--108
+ [] 
  []
 
-[23]) [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
+) (./wyk12.tex
+Overfull \hbox (54.72894pt too wide) in paragraph at lines 9--26
+ [] 
+ []
+
+[20] [21] [22]) [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5DF7C6CD78E5918AF0A7B91FCCA27458;2356.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: F7A9A91715441F16F37D5CF164B7DB47;4137
+(rerunfilecheck)             After:  26EC0C852ECAA1968DAED4B2F2972ECF;4387.
  ) 
 Here is how much of TeX's memory you used:
- 32433 strings out of 492616
- 652245 string characters out of 6129481
- 734394 words of memory out of 5000000
- 35772 multiletter control sequences out of 15000+600000
- 570070 words of font info for 54 fonts, out of 8000000 for 9000
+ 32945 strings out of 492616
+ 660443 string characters out of 6129481
+ 743025 words of memory out of 5000000
+ 36248 multiletter control sequences out of 15000+600000
+ 576362 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,15n,101p,830b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/local/t
-exlive/2019/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/texlive/2019/tex
-mf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2019/texmf-dist/fonts/
-enc/dvips/pl/plrm.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm
--mathsy.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx10.pf
-b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/tex
-mf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fon
-ts/type1/public/lm/lmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lm
-sy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/pl/plmi10.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/pl/plsy10.pfb>
-Output written on main.pdf (24 pages, 466241 bytes).
+ 63i,15n,101p,830b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/t
+exlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2019/te
+xmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm
+/lmbxi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr10.pf
+b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
+blic/pl/plmi10.pfb>
+Output written on main.pdf (23 pages, 503130 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
- 471 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 496 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 663 words of extra memory for PDF output out of 10000 (max. 10000000)
 
