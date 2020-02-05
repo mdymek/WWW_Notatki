@@ -3,9 +3,9 @@
 \begin{document}
     \begin{itemize}
         \item Jest rozwinięciem języka stworzonego przez Brendana Eicha z Netscape (najpierw pod nazwą Mocha, później LiveScript i ostatecznie JavaScript).
-        \item W \textbf{1996} pojawiła się pierwsza przeglądarka (Netscape Navigator 2.0) zawierająca obsługę Javascriptu
-        \item W tym samym roku Microsoft wypuścił Internet Explorera 3.0 z obsługą własnej wersji tego języka pod nazwą \textbf{JScript}.
-        \item W \textbf{1997} pojawił się standard tego języka pod nazwą ECMAScript*. Obecnie Javascript, JScript (Microsoft), ActionScript (Macromedia, a potem Adobe wykorzystany we Flashu i Flexie) są po prostu implementacjami tego standardu (zawierającymi często różne rozszerzenia).
+        \item W \textbf{1996} pojawiła się pierwsza przeglądarka (Netscape Navigator 2.0) obsługująca Javascript.
+        \item W tym samym roku Microsoft wypuścił Internet Explorera 3.0 z obsługą własnej wersji - \textbf{JScript}u.
+        \item W \textbf{1997} pojawił się standard tego języka pod nazwą ECMAScript*. Obecne języki są po prostu implementacjami tego standardu (zawierającymi często różne rozszerzenia).
         \item Istnieją \textbf{kompilatory/translatory} (transpiler) tumaczące kod np z ES6 na ES5.
         \item Istnieją \textbf{rozszerzenia} Jascriptu (ECMAScriptu): TypeScript (używany w Angular i narzędziach Microsoftu), CoffeeScript, JSX (ReactJs).
     \end{itemize}
@@ -17,10 +17,9 @@
     \end{enumerate}
     W taki między innymi sposób są realizowane w JavaScripcie moduły (Module Pattern)
 
-
     \textbf{strict mode}
     \begin{itemize}
-        \item Włączamy dodając "use strict"; na początku skryptu lub funkcji
+        \item Włączamy dodając "\textbf{use strict}"; na początku skryptu lub funkcji.
         \item Pojawił się w ECMAScript 5 i jest wspierany w IE from version 10. Firefox from version 4.
         Chrome from version 13. Safari from version 5.1.+ Opera from version 12.
         \item Nawet jeśli nie jest wspierany, można go użyć - \textbf{nie powoduje to błędów}.
@@ -32,8 +31,8 @@
         \item Słowo kluczowe this ma trochę inne znaczenie w Javascript niż w C++, czy Javie.
         \item Jego wartość \textbf{różni się} w zależności od \textbf{kontekstu}:
         \begin{itemize}
-            \item Na zewnątrz funkcji this oznacza pewiwn obiekt globalny (w przeglądarkach - window)
-            \item W "normalnych" funkcjach w trybie \textbf{strict} - obiekt globalny \textbf{window}, w trybie \textbf{sloppy} - \textbf{undefined}
+            \item Na zewnątrz funkcji this oznacza pewiwn obiekt globalny (w przeglądarkach - window).
+            \item W "normalnych" funkcjach w trybie \textbf{strict} - obiekt globalny \textbf{window}, w trybie \textbf{sloppy} - \textbf{undefined}.
             \item W \textbf{konstruktorach} i \textbf{metodach} odnosi się do tworzonego/modyfikowanego \textbf{obiektu}.
         \end{itemize}
     \end{itemize}
@@ -60,22 +59,20 @@
                 \end{itemize}
                 &
                 \begin{itemize}
-                    \item \textbf{Opisuje} metody i interfejsy umożliwiające \textbf{interakcję z przeglądarką}
-                    \item Brak standardu - przeglądarki mogą mieć różniące implementacje
-                    \item Główny obiekt - \textbf{window}
+                    \item \textbf{Opisuje} metody i interfejsy umożliwiające \textbf{interakcję z przeglądarką}.
+                    \item Brak standardu - przeglądarki mogą mieć różniące się implementacje.
+                    \item Główny obiekt - \textbf{window}.
                     \item Ważniejsze obiekty i metody:
                     \begin{itemize}
-                        \item window.\textbf{location} - URL strony. Umożliwia załadowanie strony z adresu, odświeżenie, itp.
-                        \item window.\textbf{history} - historia przeglądanych stron
-                        \item window.\textbf{screen} - dane dotyczące ekranu
-                        \item \textbf{console} - konsola diagnostyczna przeglądarki
-                        \item \textbf{alert, confirm} itd. - wyświetlanie okien dialogowych
+                        \item window.\textbf{location} - URL strony. Umożliwia załadowanie strony z adresu, odświeżenie, itp.,
+                        \item window.\textbf{history} - historia przeglądanych stron,
+                        \item window.\textbf{screen} - dane dotyczące ekranu,
+                        \item \textbf{console} - konsola diagnostyczna przeglądarki,
+                        \item \textbf{alert, confirm} itd. - wyświetlanie okien dialogowych.
                     \end{itemize}
                 \end{itemize}\\
                 \hline
             \end{tabular}
         \end{center}
     \end{table}
-
-
 \end{document}

@@ -13,9 +13,9 @@
                 The Internet is a \textbf{global system of interconnected computer networks that interchange data} by
                 packet switching using the standardized Internet Protocol Suite (TCP/IP).
                 &
-                The World Wide Web (WWW, or simply Web) is an \textbf{information space} in which the items of interest,
+                The World Wide Web is an \textbf{information space} in which the items of interest,
                 referred to as \textbf{resources, are identified by global identifiers} called Uniform Resource
-                Identifiers (URI)\\
+                Identifiers (URI).\\
                 \hline
             \end{tabular}
         \end{center}
@@ -23,11 +23,11 @@
 
     \textbf{Jak działa WWW?}
     \begin{enumerate}
-        \item Użytkownik wpisuje w polu adresu przeglądarki adres (URL)
+        \item Użytkownik wpisuje w polu adresu przeglądarki adres (URL).
         \item Przeglądarka analizuje wpisany adres sprawdzając protokół (HTTP) oraz nazwę hosta.
         \item Przeglądarka łączy się z serwerem DNS i uzyskuje adres IP hosta.
         \item Przeglądarka nawiązuje połączenie TCP/IP serwerem WWW działającym pod danym adresem.
-        \item Przeglądarka wysyła w ramach protokołu HTTP żądanie (request) pobrania zasobu: GET /home.html HTTP/1.1
+        \item Przeglądarka wysyła w ramach protokołu HTTP żądanie (request) pobrania zasobu: GET /home.html HTTP/1.1.
         \item Serwer lokalizuje żądany zasób statyczny lub generuje go dynamicznie, a następnie zwraca w postaci odpowiedzi (response) HTTP zawierającej treść strony w postaci HTML.
         \item Przeglądarka wyświetla zawartość HTML w postaci graficznej.
     \end{enumerate}
@@ -38,10 +38,10 @@
     \textbf{URI (Uniform Resource Identifier)} - ciąg znaków \textbf{jednoznacznie identyfikaujący} dowolny abstrakcyjny lub fizyczny zasób.
     \begin{itemize}
         \item \textbf{Uniform} - pozwala w \textbf{jednorodny} sposób odwoływać się do różnych rodzajów zasobów niezależnie od sposobu dostępu do nich. Definiuje ogólną postać identyfikatora pozwalając na rozszerzanie i uzupenianie definicji dla różnych typów zasobów. (http, ftp, isbn)
-        \item \textbf{Resource} -dowolny abstrakcyjny lub fizyczny \textbf{zasób}, który może być identyfikowany przez URI.
+        \item \textbf{Resource} - dowolny abstrakcyjny lub fizyczny \textbf{zasób}, który może być identyfikowany przez URI.
         \item \textbf{Identifier} - identyfikator pozwalający na \textbf{odróżnienie} jednego zasobu od drugiego. Nie musi zawierać informacji o sposobie uzyskania dostępu do tego zasobu.
     \end{itemize}
-    URI definiuje jedynie ogólne ramy schematów nazewnictwa (\textbf{naming schemes}), podczas gdy szczegóły składni są
+    URI definiuje jedynie \textbf{ogólne ramy} schematów nazewnictwa (\textbf{naming schemes}), podczas gdy szczegóły składni są
     definiowane w specyfikacjach poszczególnych schematów.
 
     \textbf{Każde} URI może być \textbf{zaklasyfikowane} jako \textbf{lokalizator URL}, \textbf{nazwa URN} lub
@@ -63,18 +63,16 @@
         \item \textbf{scheme} - schemat, np. http, https, mailto, ftp, file. Odpowiada często \textbf{protokołowi dostępu} do zasobu, ale nie zawsze tak być musi. Np. dla file nie ma konkretnego protokołu.
         \item \textbf{authority} - składa się z:
         \begin{itemize}
-            \item opcjonalnej sekcji autentykacji: username:password zakończonej znakiem (@)
+            \item opcjonalnej sekcji autentykacji: username:password zakończonej znakiem (@),
             \item \textbf{host} - w postaci nazwy hosta, adresu IPv4 lub IPv6,
             \item opcjonalnego portu oddzielonego od hosta dwukropkiem (:).
         \end{itemize}
         \item \textbf{path} - ścieżka do zasobu. Jeśli w URI występowała sekcja authority, to ścieżka musi zaczynać się pojedynczym ukośnikiem. Nie może się zaczynać podwójnym ukośnikiem.
-        \item \textbf{query} - opcjonalne zapytanie jest oddzielone od wcześniejszych części pytajnikiem (?). Na ogół składa się z \textbf{zestawu par} <atrybut>=<wartość> rozdzielonych ampersandem (\&) lub średnikiem (;).
-        \item \textbf{fragment} - opcjonalny fragment oddzielony od wcześniejszych części haszem (\#). Zawiera \textbf{identyfikator zasobu podrzędnego}. Może to być np. sekcja w dokumencie. W przypadku dokumentu HTML jest to na ogół identyfikator pewnego elementu w dokumencie, do krórego przeglądarka przewija dokument podczas wyświetlania.
-        Uwaga: Fragment jest obsługiwany tylko w przeglądarce i \textbf{nie jest wysyłany do serwera}.
+        \item \textbf{query} - opcjonalne zapytanie jest oddzielone od wcześniejszych części pytajnikiem. Na ogół składa się z \textbf{zestawu par} <atrybut>=<wartość> rozdzielonych ampersandem lub średnikiem.
+        \item \textbf{fragment} - opcjonalny fragment oddzielony od wcześniejszych części haszem. Zawiera \textbf{identyfikator zasobu podrzędnego}. Może to być np. sekcja w dokumencie. Uwaga: Fragment jest obsługiwany tylko w przeglądarce i \textbf{nie jest wysyłany do serwera}.
     \end{itemize}
 
     \subsection{Protokół HTTP}
-
     \begin{itemize}
         \item \textbf{Hypertext Transfer Protocol} - protokół do \textbf{wymiany danych w sieci} Internet. HTTP jest \textbf{niesymetrycznym} protokołem request-response klient-serwer.
         \item Protokół HTTP jest \textbf{bezstanowy}, co znaczy, że serwer nie jest w stanie bez dodatkowej informacji, zawartej w żądaniu, stwierdzić że poszczególne żądania należą do danej konwersacji między klientem a serwerem. \textbf{Serwer nie wie, co działo się w poprzednich żądaniach.}
@@ -89,17 +87,17 @@
                 \hline
                 \hline
                 \begin{itemize}
-                    \item linię \textbf{żądania} (request line),
-                    \item \textbf{nagłówki} (headers) - przesyłane w postaci \textbf{par} nazwa:wartość, oddzielone przecinkami.
-                    \item \textbf{(pusta linia)}
-                    \item opcjonalnie \textbf{treść} żądania (request body)
+                    \item linia \textbf{żądania} (request line),
+                    \item \textbf{nagłówki} (headers) - przesyłane w postaci \textbf{par} nazwa:wartość, oddzielone przecinkami,
+                    \item \textbf{pusta linia},
+                    \item opcjonalnie \textbf{treść} żądania (request body).
                 \end{itemize}
                 &
                 \begin{itemize}
                     \item linia \textbf{statusu} (status line),
                     \item \textbf{nagłówki} (headers),
-                    \item \textbf{(pusta linia)}
-                    \item opcjonalnie \textbf{treść} odpowiedzi (response body)
+                    \item \textbf{pusta linia},
+                    \item opcjonalnie \textbf{treść} odpowiedzi (response body).
                 \end{itemize}\\
                 \hline
             \end{tabular}
@@ -150,7 +148,7 @@
                 \hline
                 \hline
                 \textbf{Przycisk Wstecz/ Odświeżenie strony} & Niegroźne &
-                Dane zostaną powtórnie przesłane. (przeglądarka powinna ostrzec użytkownika)\\
+                Dane zostaną powtórnie przesłane (przeglądarka powinna ostrzec użytkownika)\\
                 \hline
                 \textbf{Zakładki} & Można dodać do zakładek & Nie można dodac do zakładek\\
                 \hline
@@ -168,15 +166,14 @@
                 \hline
                 \textbf{Ograniczenia na przesyłane dane} & Tylko znaki ASCII & Brak ograniczeń (również binarne)\\
                 \hline
-                \textbf{Bezpieczeństwo} & GET mniej bezpieczny niż POST bo dane są przekazywan jako część URLa.
-                Nigdy nie należy przesyłać haseł i innych wrażliwych danych przy pomocy GET &
+                \textbf{Bezpieczeństwo} & GET jest mniej bezpieczny niż POST bo dane są przekazywane jako część URLa.
+                Nigdy nie należy przesyłać haseł i innych wrażliwych danych przy pomocy GET. &
                 POST jest \textbf{tylko odrobinę bezpieczniejszy} niż GET, ponieważ dane nie są przechowywane w historii
                 przeglądarki ani w logach serwera.\\
                 \hline
             \end{tabular}
         \end{center}
     \end{table}
-
 
     \begin{table}[H]
         \begin{center}
@@ -252,5 +249,4 @@
             \end{tabular}
         \end{center}
     \end{table}
-
 \end{document}

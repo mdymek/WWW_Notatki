@@ -5,11 +5,11 @@
     \subsubsection{Metody bezpieczne i dempotentne.}
 
     \begin{theorem}
-        \textbf{Metoda bezpieczna} (safe) - metoda, która \textbf{nie generuje efektów ubocznych}. W praktyce są to metody nie modyfikujące danych zasobów na serwerze
+        \textbf{Metoda bezpieczna} (safe) - metoda, która \textbf{nie generuje efektów ubocznych}. W praktyce są to metody nie modyfikujące danych zasobów na serwerze.
     \end{theorem}
 
     \begin{theorem}
-        \textbf{Metoda idempotentna} - to metoda, której \textbf{wielokrotne wykonanie daje takie same efekty}, jak wykonanie jej jeden raz. Klient może tak metodę wykonać wielokrotnie i oczekuje, że jej efekt w stosunku do zasobów serwera będzie taka sam jak w przypadaku wykonania jednorazowego, chociaż zwrócona odpowiedźmoże się różnić.
+        \textbf{Metoda idempotentna} - to metoda, której \textbf{wielokrotne wykonanie daje takie same efekty}, jak wykonanie jej jeden raz. Zwrócona przez serwer odpowiedź może się różnić.
     \end{theorem}
 
     \begin{table}[H]
@@ -36,7 +36,7 @@
             \end{tabular}
         \end{center}
     \end{table}
-    Prawidowa implementacja metod leży po stronie twórcy oprogramownia. Twórca/projektant backendu musi zadbać aby jego obsługa metod była zgodna z powyższymi wymaganiami.
+    Prawidowa implementacja metod leży po stronie twórcy oprogramownia.
 
     \subsubsection{Nagłówki.}
     \begin{table}[H]
@@ -50,18 +50,18 @@
                 \hline
                 \multicolumn{2}{|c|}{\textbf{Nagłówki żądania}}\\
                 \hline
-                \textbf{Cookie} & przekazuje zwrotnie do serwera HTTP Cookie (ciasteczko) przesłane wcześniej z serwera w nagłówku Set-Cookie\\
+                \textbf{Cookie} & przekazuje zwrotnie do serwera HTTP Cookie (ciasteczko) przesłane wcześniej z serwera w nagłówku Set-Cookie.\\
                 \hline
                 \textbf{User-Agent} & identyfikuje rodzaj aplikacji klienckiej (przeglądarkę), system operacyjny, klienta, itp.\\
                 \hline
-                \textbf{Host} & nazwa domenowa serwera. W wersji HTTP/1.1 (i 2.0) nagłowek obowiązkowy. Umożliwia Virtual hosting\\
+                \textbf{Host} & nazwa domenowa serwera. W wersji HTTP/1.1 (i 2.0) nagłowek obowiązkowy. Umożliwia Virtual hosting.\\
                 \hline
-                \textbf{Accept-Language} & język(i) akceptowane/preferowane przez klienta\\
+                \textbf{Accept-Language} & język(i) akceptowane/preferowane przez klienta.\\
                 \hline
                 \hline
                 \multicolumn{2}{|c|}{\textbf{Nagłówki odpowiedzi}}\\
                 \hline
-                \textbf{Content-Type} & typ MIME zwartości (np. text/html, text/css, image/png)\\
+                \textbf{Content-Type} & typ MIME zwartości (np. text/html, text/css, image/png).\\
                 \hline
                 \textbf{Content-Length} & rozmiar ciała (body) odpowiedzi. (W przypadku metody HEAD, rozmiar ciała, które byłoby wysłane dla metody GET).\\
                 \hline
@@ -70,5 +70,4 @@
             \end{tabular}
         \end{center}
     \end{table}
-
 \end{document}

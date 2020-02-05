@@ -29,8 +29,8 @@
     \subsection{SQL Injection}
     \begin{itemize}
         \item Polega na \textbf{niedostatecznej walidacji} i \textbf{filtrowaniu} wprowadzonych przez
-        użytkownika danych, które są wykorzystywane do tworzenia \textbf{zapytania SQL}
-        \item Dane te są \textbf{interpretowane} przez bazę \textbf{jako elementy języka SQL}, a nie -
+        użytkownika danych wykorzystywanych do tworzenia \textbf{zapytania SQL}.
+        \item Dane te są \textbf{interpretowane} przez bazę \textbf{jako elementy języka SQL}, a nie
         zwykłe dane tekstowe.
         \item \textbf{Zabezpieczenia}:
         \begin{itemize}
@@ -71,9 +71,9 @@
         \item Fatalnym pomysłem jest np. nadawanie kolejnych numerów jako identyfikatory sesji!
         \item Zabezpieczenia:
         \begin{itemize}
-            \item \textbf{Generowanie niemożliwych do przewidzenia} identyfikatorów sesji
-            \item Używanie \textbf{HTTPS}
-            \item \textbf{Umożliwienie} użytkownikowi \textbf{wylogowania się} powodujące dezaktywacja sesji
+            \item \textbf{generowanie niemożliwych do przewidzenia} identyfikatorów sesji,
+            \item używanie \textbf{HTTPS},
+            \item \textbf{umożliwienie} użytkownikowi \textbf{wylogowania się} powodujące dezaktywacja sesji
             i jej identyfikatora.
         \end{itemize}
     \end{itemize}
@@ -83,12 +83,12 @@
         \item Wiele serwisów przy pierwszym połączeniu użytkownika do serwisu
         rozpoczyna sesję (nadaje użytkownikowi session ID), a następnie, już w
         ramach tej sesji, pozwala mu się zalogować do serwisu.
-        \item W takiej sytuacji czasami możliwy jest atak Session Fixation
+        \item W takiej sytuacji czasami możliwy jest atak Session Fixation:
         \begin{enumerate}
             \item Atakujący łączy się do strony logowania.
-            \item Serwer zawraca stronę logowania z identyfikatorem sesji
-            \item \textbf{Atakujący przesyła ofierze link do strony logowania z ustawionym swoim identyfikatorem sesji}
-            \item Ofiara loguje się na serwer używając przekazanego identyfikatora sesji
+            \item Serwer zawraca stronę logowania z identyfikatorem sesji.
+            \item \textbf{Atakujący przesyła ofierze link do strony logowania z ustawionym swoim identyfikatorem sesji}.
+            \item Ofiara loguje się na serwer używając przekazanego identyfikatora sesji.
             \item Użytkownik ładuje stronę z kontem ofiary używając \textbf{wspólnego identyfikatora
             sesji}, która została już wcześniej autoryzowana przez ofiarę.
         \end{enumerate}
@@ -111,23 +111,23 @@
         \item Przykładowy scenariusz:
         \begin{enumerate}
             \item Atakujący chce wykonać nieautoryzowany przelew z banku, który udostępnia
-            taką funkcjonalność przez wywołania postaci
-            \item Ofiara jest zalogowana na serwer (np. do banku)
+            taką funkcjonalność przez wywołania postaci.
+            \item Ofiara jest zalogowana na serwer (np. do banku).
             \item Atakujący podsuwa ofierze stronę, maila, itp. zawierającą link wykonujący
             złośliwą operację na serwerze (np. przelew bankowy).
             \item Ofiara \textbf{uruchamia} podsunięty \textbf{link w przeglądarce}, w której \textbf{aktywna jest sesja}
             na serwer. W przypadku drugiego linka, ofiara nie musi nawet uruchamiać
-            linka - zostanie on automatycznie uruchomiony w celu pobrania "obrazka"
+            linka - zostanie on automatycznie uruchomiony w celu pobrania "obrazka".
             \item Link zawierający żądanie dla serwera zostaje przesłany na serwer wraz ze
             wszystkimi ciasteczkami (w tym z identyfikatorem sesji).
         \end{enumerate}
         \item \textbf{Zabezpieczenia}:
         \begin{itemize}
             \item \textbf{Synchronizer Tokens} - Każda \textbf{operacja zmieniająca stan} aplikacji \textbf{wymaga dodatkowego} unikalnego \textbf{jednorazowego tokenu} (CSRF token).
-            \item \textbf{Dodatkowa autoryzacja} przez użytkownika - dodatkowe hasło, CAPTCHA, token jednorazowy
-            \item Atrybut \textbf{SameSite} w ciasteczku - zapobiega wysłaniu ciasteczka jeśli \textbf{zapytanie nie pochodzi z tej samej strony}/
-            serwisu, z której pochodzi ciasteczko.
-            \item \textbf{CORS}
+            \item \textbf{Dodatkowa autoryzacja} przez użytkownika - dodatkowe hasło, CAPTCHA, token jednorazowy.
+            \item Atrybut \textbf{SameSite} w ciasteczku - zapobiega wysłaniu ciasteczka jeśli \textbf{zapytanie nie
+            pochodzi z tej samej strony}/ serwisu, z której pochodzi ciasteczko.
+            \item \textbf{CORS}.
         \end{itemize}
     \end{itemize}
 
@@ -137,7 +137,7 @@
         \item Aby zabezpieczyć się przed CSRF zasób (skrypt) pobrany z danej lokalizacji
         (Origin) może czytać dane i wysyłać jedynie do innych  \textbf{zasobów z tej samej
         lokalizacji}).
-        \item Lokalizacja = scheme + host + port
+        \item Lokalizacja = scheme + host + port.
         \item \textbf{Problemy z SOP} - czasami chcemy zezwolić na dostęp do naszych zasobów z zewnątrz. Na
         przykład udostępniając  \textbf{publiczne API}, fonty, skrypty.
     \end{itemize}
@@ -149,7 +149,7 @@
         wysyłająca żądanie.
         \item \textbf{Nagłówek} jest \textbf{ustawiany przez przeglądarkę} i kod użytkownika nie ma
         możliwości zmiany tego nagłówka.
-        \item Serwer odpowiada z nagłówkiem
+        \item Serwer odpowiada z nagłówkiem.
         \item Przeglądarka sprawdza, czy zwrócona wartość pozwala na udostępnienie
         zasobu i przekazuje go do kodu strony tylko wtedy, gdy jest to dozwolone.
         \item Istnieje tez możliwość \textbf{wymuszenia dodatkowej autoryzacji}.

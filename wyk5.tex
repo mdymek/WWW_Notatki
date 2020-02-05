@@ -4,19 +4,19 @@
 
     \begin{itemize}
         \item \textbf{Kaskadowe arkusze stylów} (ang. Cascading Style Sheets) - język opisu sposoby prezentacji (wyglądu) dokumentu HTML.
-        \item CSS umożliwia \textbf{rozdzielenie struktury} i zawartości dokumentu od \textbf{sposobu} jego \textbf{prezentacji}\\
+        \item CSS umożliwia \textbf{rozdzielenie struktury} i zawartości dokumentu od \textbf{sposobu} jego \textbf{prezentacji}.\\
 
         \item Określanie \textbf{czcionek}, \textbf{marginesów}, \textbf{odstępów} między liniami; \textbf{rozmiarów} i \textbf{położenia} poszczególnych elementów
         strony; \textbf{obramowań} i \textbf{wypełnień}.
-        \item Zmiana sposobu \textbf{prezentacji standardowych elementów} (np. punktory w listach)
+        \item Zmiana sposobu \textbf{prezentacji standardowych elementów} (np. punktory w listach).
     \end{itemize}
 
     \subsection{Selektory}
     \begin{itemize}
-        \item Selektor decyduje do którego elementu strony są stosowane właściwości
+        \item Selektor decyduje do \textbf{którego elementu} strony są stosowane właściwości.
         \item Kryterium wyboru może być m.in. typ elementu, atrybuty (w szczególności id i class) oraz położenie elementu względem innych elementów.
-        \item Pseduo-elementy dają dostęp m.in. do fragmentów elementów (::first-letter)
-        \item Można także używać pseudo-klas dających dostęp do informacji nie zawartych bezpośrednio w dkoumencie (:hover, :visited)
+        \item Pseudo-elementy dają dostęp m.in. do fragmentów elementów (::first-letter).
+        \item Można także używać pseudo-klas dających dostęp do informacji nie zawartych bezpośrednio w dokumencie (:hover, :visited).
     \end{itemize}
 
     \begin{table}[H]
@@ -77,21 +77,18 @@
     \end{table}
     Style związane z fontami są dziedziczone z elementu rodzica. Większość pozostałych stylów nie jest dziedziczona.
 
-    \subsection{Specyficzność.}
-
+    \subsection{Specyficzność}
     Specyficzność określa "\textbf{szczegółowość}" selektora:
-
     \begin{table}[H]
         \begin{center}
             \begin{tabular}{p{3cm} p{9cm} p{3cm}}
                 0, 0 , 0, \textbf{1} & prosty selektor (selektor \textbf{elementu}) & (p)\\
-                0, 0 , \textbf{1}, 0 & selektor \textbf{klasy} ma specyficzność & (.head-button)\\
-                0, \textbf{1} , 0, 0 & selektor oparty na \textbf{id} ma specyficzność & (\#save-button)\\
-                \textbf{1}, 0 , 0, 0 & style \textbf{inline} ma specyficzność &\\
+                0, 0 , \textbf{1}, 0 & selektor \textbf{klasy} & (.head-button)\\
+                0, \textbf{1} , 0, 0 & selektor oparty na \textbf{id} & (\#save-button)\\
+                \textbf{1}, 0 , 0, 0 & style \textbf{inline} &\\
             \end{tabular}
         \end{center}
     \end{table}
-
     Selector "body \#content .data img:hover" ma specyficzność równą 0,1,2,2.
 
     \subsection{Box Model}

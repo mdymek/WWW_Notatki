@@ -2,17 +2,17 @@
 
 \begin{document}
     \begin{itemize}
-        \item \textbf{Środowisko uruchomieniowe Javascript} oparte na silniku Google Chrome V8
-        \item Stworzony w \textbf{2009} roku przez Ryana Dahla w celu \textbf{wyeliminowania problemów ze skalowalnością} tradycyjnych serwerów HTTP
-        \item \textbf{Open source}: licencja MIT
-        \item Wykorzystywany przede wszystkim do tworzenia \textbf{serwerów} HTTP, ale jest też używany do tworzenia aplikacji desktopowych
+        \item \textbf{Środowisko uruchomieniowe Javascript} oparte na silniku Google Chrome V8.
+        \item Stworzony w \textbf{2009} roku przez Ryana Dahla w celu \textbf{wyeliminowania problemów ze skalowalnością} tradycyjnych serwerów HTTP.
+        \item \textbf{Open source}: licencja MIT.
+        \item Wykorzystywany przede wszystkim do tworzenia \textbf{serwerów} HTTP, ale jest też używany do tworzenia aplikacji desktopowych.
     \end{itemize}
 
     \subsection{Architektura}
     \begin{itemize}
-        \item Jeden wątek z \textbf{pętlą zdarzeń} (event loop)
-        \item \textbf{Nieblokujące I/O} bazujące na zdarzeniach i wywołaniach zwrotnych (\textbf{callback})
-        \item Bazuje na bibliotece libuv (napisanej w języku C)
+        \item Jeden wątek z \textbf{pętlą zdarzeń} (event loop),
+        \item \textbf{Nieblokujące I/O} bazujące na zdarzeniach i wywołaniach zwrotnych (\textbf{callback}),
+        \item Bazuje na bibliotece libuv (napisanej w języku C).
     \end{itemize}
 
     \begin{table}[H]
@@ -21,39 +21,37 @@
                 \textbf{Zalety} & \textbf{Wady}\\
                 \hline
                 \begin{itemize}
-                    \item \textbf{Duża szybkość}, potrafi obsłużyć znacznie więcej żądań niż tradycyjny serwer (jak np. Apache)
-                    \item \textbf{Brak narzutów} związanych z tworzeniem i utrzymywaniem \textbf{wątków}
-                    \item Wysoka \textbf{skalowalność} związana z użyciem nieblokującego API i pojedynczej pętli zadarzeń
-                    \item \textbf{Rozbudowany ekosystem} narzędzi i bibliotek
-                    \item Możliwość pisania frontendu i backendu w tym samym języku
+                    \item \textbf{Duża szybkość}, potrafi obsłużyć znacznie więcej żądań niż tradycyjny serwer (jak np. Apache),
+                    \item \textbf{Brak narzutów} związanych z tworzeniem i utrzymywaniem \textbf{wątków},
+                    \item Wysoka \textbf{skalowalność} związana z użyciem nieblokującego API i pojedynczej pętli zadarzeń,
+                    \item \textbf{Rozbudowany ekosystem} narzędzi i bibliotek,
+                    \item Możliwość pisania frontendu i backendu w tym samym języku,
                     \item Jest częścią środowisk tworzenia aplikacji webowych:
                     \begin{itemize}
-                        \item \textbf{MEAN} - MongoDB, Express, Angular, Node
-                        \item \textbf{MERN} - MongoDB, Express, React, Node
+                        \item \textbf{MEAN} - MongoDB, Express, Angular, Node,
+                        \item \textbf{MERN} - MongoDB, Express, React, Node.
                     \end{itemize}
                 \end{itemize}
                 &
                 \begin{itemize}
-                    \item Niezbyt dobrze sprawdza się w zastosowaniach wymagających \textbf{dużej mocy obliczeniowej} (CPU intensive)
-                    \item Stosunkowo \textbf{duża zmienność} całego środowiska i pakietów
+                    \item Niezbyt dobrze sprawdza się w zastosowaniach wymagających \textbf{dużej mocy obliczeniowej} (CPU intensive),
+                    \item Stosunkowo \textbf{duża zmienność} całego środowiska i pakietów,
                     \item \textbf{Callback hell} – problem z utrzymaniem \textbf{przejrzystości} kodu z związku z potrzebą stosowania dużej liczby wywołań zwrotnych.
                 \end{itemize}\\
             \end{tabular}
         \end{center}
     \end{table}
 
-    \subsection{NPM - Node Package Manager.}
+    \subsection{NPM - Node Package Manager}
     \begin{itemize}
-        \item Podstawowe \textbf{narzędzie} do \textbf{zarządzania pakietami} w Node.js
-        \item Umożliwia instalację i aktualizację pakietów z uwzględnieniem \textbf{zależności} między nimi
-        \item Pakiety można instalować \textbf{globalnie} lub \textbf{lokalnie}
-        \item \textbf{Synchroniczny lub asynchroniczny model programowania.}
-        \item  \textbf{Request} i \textbf{response} są strumieniami, które generują zdarzenia 'error', 'data', 'end'.
+        \item Podstawowe \textbf{narzędzie} do \textbf{zarządzania pakietami} w Node.js.
+        \item Umożliwia instalację i aktualizację pakietów z uwzględnieniem \textbf{zależności} między nimi.
+        \item Pakiety można instalować \textbf{globalnie} lub \textbf{lokalnie}.
         \item \textbf{Plik package.json}
         \begin{itemize}
-            \item Zawiera ważne \textbf{informacje} na temat tworzonego pakietu/aplikacji
-            \item Zawiera \textbf{listę pakietów} od których zależy pakiet/aplikacja wraz z \textbf{numerami wersji}
-            \item Pozwalana na \textbf{automatyczne pobranie} wszystkich \textbf{niezbędnych zależności}
+            \item Zawiera ważne \textbf{informacje} na temat tworzonego pakietu/aplikacji.
+            \item Zawiera \textbf{listę pakietów} od których zależy pakiet/aplikacja wraz z \textbf{numerami wersji}.
+            \item Pozwalana na \textbf{automatyczne pobranie} wszystkich \textbf{niezbędnych zależności}.
         \end{itemize}
     \end{itemize}
 \end{document}

@@ -1,14 +1,14 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-
     \begin{itemize}
-        \item Protokół HTTP jest \textbf{bezstanowy} (chociaż sam serwer oczywiście jakiś stan posiada).
-        \item \textbf{Każde żądanie} przychodzące jest \textbf{przetwarzane niezależnie} od ewentualnych wcześniejszych żądań
         \item W wielu sytuacjach konieczne jest \textbf{powiązanie kolejnych żądań} przychodzących od tego samego klienta
-        \item Ciąg takich żądań przychodzących od jednego klienta, to \textbf{sesja}
         \item \textbf{Grupowanie żadań} przychodzących od jednego klienta musi byc \textbf{realizowane przez programistę}
     \end{itemize}
+
+    \begin{theorem}
+        \textbf{Sesja} - zgrupowanie żądań przychodzących od tego samego klienta.
+    \end{theorem}
 
     \begin{theorem}
         Sesja jest \textbf{nowa} jeśli {została utworzona} po stronie serwera,
@@ -17,23 +17,23 @@
 
     \subsection{Identyfikator sesji}
     \begin{itemize}
-        \item Z sesją wiążemy pewien \textbf{identyfikator generowany} przez serwer (identyfikator sesji)
-        \item Identyfikator sesji jest generowany przez serwer \textbf{przy pierwszym żądaniu} przychodzącym od klienta
-        \item \textbf{Wszystkie następne żądania} przychodzące od tego samego klienta \textbf{zawierają} ten identyfikator
+        \item Z sesją wiążemy pewien \textbf{identyfikator generowany} przez serwer (identyfikator sesji).
+        \item Identyfikator sesji jest generowany przez serwer \textbf{przy pierwszym żądaniu} przychodzącym od klienta.
+        \item \textbf{Wszystkie następne żądania} przychodzące od tego samego klienta \textbf{zawierają} ten identyfikator.
     \end{itemize}
 
     \subsection{Techniki przekazywania identyfikatora sesji}
     \begin{itemize}
-        \item \textbf{Przepisywanie URL} (URL rewriting)
-        \item \textbf{Ukryte pola} w formularzach HTML
-        \item \textbf{Ciasteczka} (cookies)
+        \item \textbf{Przepisywanie URL} (URL rewriting),
+        \item \textbf{Ukryte pola} w formularzach HTML,
+        \item \textbf{Ciasteczka} (cookies).
     \end{itemize}
 
     \subsubsection{Przepisywanie URL (URL Rewriting)}
     \begin{itemize}
         \item Identyfikator sesji jest \textbf{dołączany do URL}-a każdego żądania.
         \item Serwer na zwracanej stronie dołącza do wszystkich URL-i \textbf{dodatkowy parametr} z identyfikatorem sesji.
-        \item Wywołanie przez klienta takiego URL-a pozwala serwerowi na \textbf{pobranie identyfikatora sesji} z przekazanego parametru
+        \item Wywołanie przez klienta takiego URL-a pozwala serwerowi na \textbf{pobranie identyfikatora sesji} z przekazanego parametru.
     \end{itemize}
 
     \begin{table}[H]
@@ -42,11 +42,11 @@
                 \textbf{Zalety} & \textbf{Wady}\\
                 \hline
                 \begin{enumerate}
-                    \item \textbf{Działa z każdą przeglądarką} niezależnie od ustawień użytkownika
+                    \item \textbf{Działa z każdą przeglądarką} niezależnie od ustawień użytkownika.
                 \end{enumerate}
                 &
                 \begin{enumerate}
-                    \item Trzeba \textbf{przepisać każdy} używany \textbf{link}
+                    \item Trzeba \textbf{przepisać każdy} używany \textbf{link}.
                     \item W przypadku potrzeby przekazania większej liczby informacji przez parametry URL-a \textbf{możemy osiągnąć limit długości URL}-a.
                 \end{enumerate}\\
             \end{tabular}
@@ -55,28 +55,28 @@
 
     \subsubsection{Ukryte pola formularza (hidden fields)}
     \begin{itemize}
-        \item Identyfikator sesji (i ewentualne inne dane) są \textbf{przekazywane} z serwera do przeglądarki jako \textbf{wartości ukrytych pól formularza}
+        \item Identyfikator sesji (i ewentualne inne dane) są \textbf{przekazywane} z serwera do przeglądarki jako \textbf{wartości ukrytych pól formularza}.
         \item W przeglądarce po wykonaniu \textbf{submit}, zawartość tych pól jest \textbf{dołączana automatycznie} do wartości pozostałych pól i, jako parametry metody POST lub
         GET, są przekazywane z powrotem na serwer.
     \end{itemize}
 
     \subsubsection{Cookies}
     \begin{itemize}
-        \item W kodzie serwlet pobieramy z \textbf{request ciasteczka} (jeśli są) oraz \textbf{tworzymy nowe} i dodajemy do \textbf{response}
+        \item W kodzie serwlet pobieramy z \textbf{request ciasteczka} (jeśli są) oraz \textbf{tworzymy nowe} i dodajemy do \textbf{response}.
         \item Przeglądarka \textbf{automatycznie} do zwrotnego request'u \textbf{dołącza} ciasteczka
-        przesłane z serwera
-        \item HTTP Cookie to \textbf{niewielki zestaw informacji} przekazywany z serwera do klienta
+        przesłane z serwera.
+        \item HTTP Cookie to \textbf{niewielki zestaw informacji} przekazywany z serwera do klienta.
         \item Klient może takie ciasteczko \textbf{zachować i odesłać} z powrotem z następnym
-        zapytaniem do serwera
-        \item \textbf{Session cookies} - są \textbf{usuwane przez przeglądarkę} kiedy przeglądarka jest \textbf{zamykana}. Nie mają
+        zapytaniem do serwera.
+        \item \textbf{Session cookies} - są \textbf{usuwane przez przeglądarkę} kiedy jest ona \textbf{zamykana}. Nie mają
         ustawionej dyrektywy MaxAge ani Expires.
-        \item \textbf{Permanent cookies} - \textbf{dezaktywuja się} w określonym \textbf{moomencie} (dyrektywa Expires) lub po
+        \item \textbf{Permanent cookies} \textbf{dezaktywuja się} w określonym \textbf{momencie} (dyrektywa Expires) lub po
         określonym \textbf{czasie} (dyrektywa MaxAge). Mogą trwać pomiędzy kolejnymi uruchomieniami klienta.\\
 
         \item \textbf{Inne ważniejsze dyrektywy}:
         \begin{itemize}
             \item \textbf{Secure} - ciasteczko może być wysłane na serwer jedynie przy użyciu \textbf{bezpiecznego
-            protokołu} HTTPS
+            protokołu} HTTPS.
             \item \textbf{HttpOnly} - ciasteczko może być wysłane na serwer \textbf{jedynie przez przeglądarkę}. Nie jest
             możliwe dołączenie ciasteczka z poziomu kodu w Javascript.
             \item \textbf{Domain} - domena (nazwa hosta) do której ciasteczko może być wysłane.
@@ -94,62 +94,68 @@
         \begin{itemize}
             \item \textbf{Podgląd i modyfikację informacji} o sesji, takich jak identyfikator sesji, moment utworzenia, czas ostatniego dostępu, itp.
             \item \textbf{Dodawanie} do sesji \textbf{obiektów} przechowujących informację dostępną
-            podczas następnych wywołań serwletu dla tej samej sesji
-            \item Wykorzystuje nagłowek \textbf{Authorization}.
+            podczas następnych wywołań serwletu dla tej samej sesji.
         \end{itemize}
     \end{itemize}
-
-
 
     \subsection{Filtr Servlet}
     \begin{itemize}
         \item Filtr jest obiektem, który jest \textbf{wywoływany przed obsłużeniem} przez serwlet \textbf{żądania} klienta oraz \textbf{po} jego obsłużeniu.
         \item Może \textbf{odczytywać i modyfkować} zawartość \textbf{żądania} oraz \textbf{odpowiedzi}.
-        \item \textbf{Zastosowania} filtrów"
-        \begin{itemize}
-            \item zapisywanie do \textbf{logów}
-            \item \textbf{kompresja}
-            \item \textbf{szyfrowanie} i deszyfrowanie
-            \item \textbf{autoryzacja} użytkownika
-            \item \textbf{walidacja dostępu} do zasobów
-        \end{itemize}
+        \item \textbf{Zastosowania} filtrów:
+        \begin{table}[H]
+            \begin{center}
+                \begin{tabular}{p{8cm} p{8cm}}
+                    \begin{itemize}
+                        \item zapisywanie do \textbf{logów},
+                        \item \textbf{kompresja},
+                        \item \textbf{szyfrowanie} i deszyfrowanie,
+                    \end{itemize}
+                    &
+                    \begin{itemize}
+                        \item \textbf{autoryzacja} użytkownika,
+                        \item \textbf{walidacja dostępu} do zasobów.
+                    \end{itemize}
+                \end{tabular}
+            \end{center}
+        \end{table}
     \end{itemize}
 
     \subsection{Autentykacja użytkownika}
     \subsubsection{HTTP basic authentication}
     \begin{itemize}
-        \item Mechanizm \textbf{wbudowany} w protokół HTTP
-        \item Schematy: Basic (base64), Bearer(OAuth 2.0), Digest (md5, sha itp)
+        \item Mechanizm \textbf{wbudowany} w protokół HTTP.
+        \item Schematy: Basic (base64), Bearer(OAuth 2.0), Digest (md5, sha itp).
         \item \textbf{Basic} authentication scheme:
         \begin{itemize}
-            \item Identyfikator użytkownika wraz z hasłem przesyłane są w kodowaniu \textbf{base64}, które jest \textbf{odwracalne}
-            \item \textbf{Powininen} (właściwie musi) być używany z protokołem \textbf{HTTPS} aby uchronić hasło przed dostępem osób trzecich
-            \item Wsparcie dla tej motody jest wbudowane zarówno w kliencie jak i na serwerze
-            \item \textbf{Brak możliwości wylogowania} użytkowika
+            \item Identyfikator użytkownika wraz z hasłem przesyłane są w kodowaniu \textbf{base64}, które jest \textbf{odwracalne},
+            \item \textbf{Powininen} (właściwie musi) być używany z protokołem \textbf{HTTPS} aby uchronić hasło przed dostępem osób trzecich,
+            \item Wsparcie dla tej motody jest wbudowane zarówno w kliencie jak i na serwerze,
+            \item \textbf{Brak możliwości wylogowania} użytkownika.
         \end{itemize}
     \end{itemize}
 
     \subsubsection{Cookies}
     \begin{itemize}
         \item Po przesłaniu danych autoryzacyjnych serwer generuje \textbf{identyfikator sesji autoryzowanej}.
-        \item Jest on \textbf{przechowywany na serwerze} oraz \textbf{przekazany do klienta}
-        \item Klient \textbf{przekazuje} go\textbf{przy każdym żądaniu} dostęu do zasobów
-        \item Serwer \textbf{sprawdza}, czy identyfikator jest \textbf{poprawny} i \textbf{aktywny}
-        \item \textbf{Wylogowanie} polega na \textbf{dezaktywacji} lub \textbf{usunięcia} identyfikatora z serwera
+        \item Jest on \textbf{przechowywany na serwerze} oraz \textbf{przekazywany do klienta}.
+        \item Klient \textbf{przekazuje} go \textbf{przy każdym żądaniu} dostęu do zasobów.
+        \item Serwer \textbf{sprawdza}, czy identyfikator jest \textbf{poprawny} i \textbf{aktywny}.
+        \item \textbf{Wylogowanie} polega na \textbf{dezaktywacji} lub \textbf{usunięciu} identyfikatora z serwera.
     \end{itemize}
 
     \subsubsection{Tokeny}
     \begin{itemize}
-        \item Najczęściej używane sa JSON Web Tokens (\textbf{JWT})
-        \item \textbf{Brak możliwości wylogowania użytkownika}, ale można określić \textbf{czas ważności tokena}
-        \item Token \textbf{nie jest przechowywany na serwerze}, a tylko u klienta (Local storage, Cookies, itp)
+        \item Najczęściej używane sa JSON Web Tokens (\textbf{JWT}).
+        \item \textbf{Brak możliwości wylogowania użytkownika}, ale można określić \textbf{czas ważności tokena}.
+        \item Token \textbf{nie jest przechowywany na serwerze}, a tylko u klienta (Local storage, Cookies, itp).
         \item \textbf{Klient} wraz z żądaniem dostępu do zasobu \textbf{wysyła} token w \textbf{nagłówku Authorization: Bearer} <token>.
-        \item \textbf{Serwer weryfikuje poprawność} tokenu przy pomocy swojego \textbf{prywatnego klucza}
+        \item \textbf{Serwer weryfikuje poprawność} tokenu przy pomocy swojego \textbf{prywatnego klucza}.
         \item Struktura tokena:
         \begin{itemize}
             \item \textbf{Nagłówek} (header) - określa \textbf{typ} tokenu i \textbf{rodzaj algorytmu haszującego}.
             \item \textbf{Zawartość} (payload) - Zawiera stwierdzenia najczęściej na temat
-            \textbf{tożsamości użytkownika} (sub - subject)
+            \textbf{tożsamości użytkownika} (sub - subject).
             \item \textbf{Podpis} (signature) - \textbf{podpis kryptograficzny} nagłówka i zawartości.
         \end{itemize}
     \end{itemize}
