@@ -1,3 +1,9 @@
+%! suppress = Unicode
+%! suppress = MissingImport
+%! suppress = SentenceEndWithCapital
+%! suppress = LineBreak
+%! suppress = MissingLabel
+%! suppress = FileNotFound
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
@@ -92,28 +98,28 @@
         \begin{center}
             \begin{tabular}{| p{3.5cm} | p{12.5cm} |}
                 \hline
-                \multicolumn{2}{|c|}{\textbf{Ogólne zakresy.}}\\
+                \multicolumn{2}{|c|}{\textbf{Ogólne zakresy.}} \\
                 \hline
                 \textbf{singleton (default)} &
-                tworzona tylko \textbf{jedna instancja} (w jednym ApplicattionContext).\\
+                tworzona tylko \textbf{jedna instancja} (w jednym ApplicattionContext). \\
                 \hline
                 \textbf{prototype} & Z każdym \textbf{żądaniem} pobrania bean'a zwracany jest
-                \textbf{nowy egzemplarz}.\\
+                \textbf{nowy egzemplarz}. \\
                 \hline
                 \hline
-                \multicolumn{2}{|c|}{\textbf{Zakresy dostępne ApplicationContext typu webowego}}.\\
+                \multicolumn{2}{|c|}{\textbf{Zakresy dostępne ApplicationContext typu webowego}}. \\
                 \hline
                 \textbf{request} & \textbf{Pojedyncza instancja} jest tworzona i dostępna podczas
-                \textbf{trwania} jednego \textbf{żądania} HTTP (HTTP request).\\
+                \textbf{trwania} jednego \textbf{żądania} HTTP (HTTP request). \\
                 \hline
-                \textbf{session} &\textbf{Pojedyncza instancja} jest tworzona i dostępna podczas
-                trwania jednej \textbf{sesji} HTTP (HTTP session).\\
+                \textbf{session} & \textbf{Pojedyncza instancja} jest tworzona i dostępna podczas
+                trwania jednej \textbf{sesji} HTTP (HTTP session). \\
                 \hline
                 \textbf{application} & \textbf{Pojedyncza instancja} jest tworzona i dostępna podczas
-                trwania \textbf{ServletContext}.\\
+                trwania \textbf{ServletContext}. \\
                 \hline
                 \textbf{websocket} & \textbf{Pojedyncza instancja} jest tworzona i dostępna podczas
-                trwania \textbf{WebSocket}.\\
+                trwania \textbf{WebSocket}. \\
                 \hline
             \end{tabular}
         \end{center}
